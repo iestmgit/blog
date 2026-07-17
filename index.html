@@ -1,186 +1,216 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- متا تگ‌های سئو (با جاوااسکریپت به‌روز می‌شوند) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- سئو -->
     <title>رادمهر اصغری | استوره AI</title>
-    <meta name="description" content="وبسایت رسمی رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM. پروژه‌های پایتون، بازی‌سازی و هوش مصنوعی." />
-    <meta name="keywords" content="رادمهر اصغری, استوره AI, IESTM, برنامه‌نویس, پایتون, بازی سازی, اصفهان" />
-    <meta property="og:title" content="رادمهر اصغری | استوره AI" />
-    <meta property="og:description" content="برنامه‌نویس، بنیانگذار IESTM، عاشق خلق ابزارهای هوشمند و بازی‌های جذاب." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://iestm.ir" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://iestm.ir" />
+    <meta name="description" content="رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM. پروژه‌های پایتون، بازی‌سازی سه‌بعدی و هوش مصنوعی.">
+    <meta name="keywords" content="رادمهر اصغری, استوره AI, IESTM, برنامه‌نویس, پایتون, Three.js, بازی سازی">
+    <meta property="og:title" content="رادمهر اصغری | استوره AI">
+    <meta property="og:description" content="برنامه‌نویس، بنیانگذار IESTM، عاشق خلق ابزارهای هوشمند و بازی‌های جذاب.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iestm.ir">
+    <link rel="canonical" href="https://iestm.ir">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- فونت فارسی وزیر -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+    <!-- فونت‌آورم -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ===== RESET & BASE ===== */
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            background-color: #0a192f;
-            color: #ccd6f6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
+            font-family: 'Vazir', 'Segoe UI', Tahoma, sans-serif;
+            background: #0c0c1a;
+            color: #e0e0f0;
+            min-height: 100vh;
             padding: 20px;
+            background-image: radial-gradient(circle at 20% 30%, #1a1a3e 0%, #0a0a1a 80%);
+            line-height: 1.8;
         }
-        a {
-            color: #64ffda;
-            text-decoration: none;
-            transition: 0.3s;
+        /* ===== اسکرول ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        a:hover {
-            color: #fff;
+        ::-webkit-scrollbar-track {
+            background: #1a1a3e;
         }
+        ::-webkit-scrollbar-thumb {
+            background: #00d4ff;
+            border-radius: 10px;
+        }
+
+        /* ===== کانتینر اصلی ===== */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: #112240;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 40px;
             padding: 30px 35px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-            min-height: 80vh;
-            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
         }
-        /* ===== HEADER / NAV ===== */
+
+        /* ===== هدر / ناو ===== */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #1e3a5f;
             flex-wrap: wrap;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #64ffda;
+            background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: 1px;
         }
         .logo span {
-            color: #e6f1ff;
+            -webkit-text-fill-color: #e0e0f0;
+            background: none;
         }
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 28px;
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #8892b0;
+            color: #a0a0c0;
             font-size: 1rem;
             padding: 6px 0;
             border-bottom: 2px solid transparent;
-            transition: 0.3s;
+            transition: 0.3s ease;
+            text-decoration: none;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ffc);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
         }
         .nav-links a:hover,
         .nav-links a.active {
-            color: #64ffda;
-            border-bottom-color: #64ffda;
+            color: #ffffff;
         }
-        /* Hamburger */
         .hamburger {
             display: none;
             font-size: 1.8rem;
-            cursor: pointer;
-            color: #64ffda;
             background: none;
             border: none;
+            color: #00d4ff;
+            cursor: pointer;
         }
-        /* ===== PAGES (content) ===== */
+
+        /* ===== صفحات ===== */
         .page {
             display: none;
-            animation: fadeIn 0.4s ease;
-            padding-top: 25px;
+            animation: fadeSlide 0.5s ease;
+            padding-top: 30px;
         }
         .page.active {
             display: block;
         }
-        @keyframes fadeIn {
+        @keyframes fadeSlide {
             from {
                 opacity: 0;
-                transform: translateY(12px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        /* ===== AVATAR ===== */
-        .avatar-lg {
-            width: 130px;
-            height: 130px;
-            background: #1e3a5f;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.8rem;
-            font-weight: 700;
-            color: #64ffda;
-            border: 3px solid #64ffda;
-            flex-shrink: 0;
-        }
-        .avatar-sm {
-            width: 60px;
-            height: 60px;
-            background: #1e3a5f;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #64ffda;
-            border: 2px solid #64ffda;
-        }
-        /* ===== TYPOGRAPHY ===== */
+
+        /* ===== تایپوگرافی ===== */
         h1 {
             font-size: 2.8rem;
-            color: #e6f1ff;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #b0b0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
         h2 {
             font-size: 2rem;
-            color: #e6f1ff;
-            margin: 30px 0 20px 0;
-            border-right: 4px solid #64ffda;
+            margin: 35px 0 20px 0;
             padding-right: 15px;
+            border-right: 4px solid #00d4ff;
+            color: #f0f0ff;
         }
         h3 {
             font-size: 1.3rem;
-            color: #ccd6f6;
+            color: #d0d0f0;
             margin: 15px 0 8px 0;
         }
         .subhead {
-            color: #64ffda;
+            color: #00d4ff;
             font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
         .text-muted {
-            color: #8892b0;
+            color: #8888aa;
         }
         .text-small {
             font-size: 0.9rem;
         }
-        /* ===== BIO ===== */
-        .bio-box {
-            background: #0a192f;
-            padding: 22px 28px;
-            border-radius: 14px;
-            border-right: 4px solid #64ffda;
-            color: #a8b2d1;
-            font-size: 1.05rem;
+
+        /* ===== پروفایل ===== */
+        .profile-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
             margin-bottom: 25px;
         }
-        /* ===== SKILLS ===== */
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid #00d4ff;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.25);
+            object-fit: cover;
+            transition: 0.4s;
+            background: #1a1a3e;
+        }
+        .avatar:hover {
+            transform: scale(1.04) rotate(-2deg);
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.4);
+        }
+        .bio-box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 22px 28px;
+            border-radius: 20px;
+            border-right: 4px solid #00d4ff;
+            color: #c0c0e0;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* ===== اسکیل‌ها ===== */
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -188,87 +218,139 @@
             margin: 15px 0 25px 0;
         }
         .skill-tag {
-            background: #1e3a5f;
-            padding: 8px 20px;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 8px 22px;
             border-radius: 40px;
             font-size: 0.95rem;
-            border: 1px solid #233554;
-            transition: 0.25s;
-            color: #ccd6f6;
+            color: #b0d0ff;
+            transition: 0.3s;
+            backdrop-filter: blur(4px);
         }
         .skill-tag:hover {
-            background: #64ffda;
-            color: #0a192f;
-            border-color: #64ffda;
-            transform: scale(1.05);
+            background: #00d4ff;
+            color: #0a0a1a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+            border-color: #00d4ff;
         }
         .skill-tag i {
             margin-left: 8px;
         }
-        /* ===== PROJECT / PRODUCT CARDS ===== */
+
+        /* ===== کارت‌های پروژه و محصول ===== */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
             margin: 20px 0;
         }
         .project-card {
-            background: #0a192f;
-            padding: 20px;
-            border-radius: 14px;
-            border-bottom: 4px solid #1e3a5f;
-            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 22px 20px;
+            border-radius: 24px;
+            border-bottom: 4px solid rgba(0, 212, 255, 0.2);
+            transition: 0.35s ease;
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
         .project-card:hover {
-            border-bottom-color: #64ffda;
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transform: translateY(-10px);
+            border-bottom-color: #00d4ff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 212, 255, 0.1);
         }
         .project-card h3 {
-            color: #e6f1ff;
+            color: #f0f0ff;
             margin-top: 0;
         }
+        .project-card h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .project-card h3 a:hover {
+            color: #00d4ff;
+        }
         .project-card p {
-            color: #8892b0;
+            color: #a0a0c0;
             font-size: 0.95rem;
         }
         .project-card .lang {
             display: inline-block;
-            margin-top: 12px;
-            background: #1e3a5f;
-            padding: 4px 14px;
+            margin-top: 14px;
+            background: rgba(0, 212, 255, 0.12);
+            padding: 4px 16px;
             border-radius: 30px;
             font-size: 0.8rem;
-            color: #64ffda;
+            color: #00d4ff;
+            border: 1px solid rgba(0, 212, 255, 0.1);
         }
-        /* ===== BLOG POSTS ===== */
+
+        /* ===== مجله ===== */
         .blog-list {
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
         .blog-item {
-            background: #0a192f;
-            padding: 20px 25px;
-            border-radius: 14px;
-            border-right: 4px solid #1e3a5f;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(6px);
+            padding: 22px 28px;
+            border-radius: 20px;
+            border-right: 4px solid rgba(0, 212, 255, 0.2);
             transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
         .blog-item:hover {
-            border-right-color: #64ffda;
+            border-right-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.04);
         }
         .blog-item .date {
-            color: #495670;
+            color: #6666aa;
             font-size: 0.85rem;
         }
         .blog-item h3 {
-            margin: 5px 0 8px 0;
+            margin: 6px 0 10px 0;
         }
-        .blog-item a {
-            color: #64ffda;
+        .full-content {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #b0b0d0;
+        }
+        .full-content.hidden {
+            display: none;
+        }
+        .full-content code {
+            background: rgba(0, 212, 255, 0.08);
+            padding: 2px 10px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            color: #00d4ff;
+        }
+        .read-more-btn,
+        .close-btn {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 6px 0;
+            transition: 0.3s;
             font-weight: 500;
         }
-        /* ===== CONTACT ===== */
+        .read-more-btn:hover,
+        .close-btn:hover {
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+        .close-btn {
+            margin-top: 12px;
+            display: inline-block;
+        }
+
+        /* ===== تماس ===== */
         .contact-flex {
             display: flex;
             flex-wrap: wrap;
@@ -282,35 +364,39 @@
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 12px 16px;
-            margin-bottom: 16px;
-            background: #0a192f;
-            border: 1px solid #233554;
-            border-radius: 10px;
-            color: #ccd6f6;
+            padding: 14px 18px;
+            margin-bottom: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            color: #e0e0f0;
             font-size: 1rem;
             transition: 0.3s;
+            backdrop-filter: blur(4px);
+            font-family: inherit;
         }
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: #64ffda;
-            box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.15);
+            border-color: #00d4ff;
+            box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
         }
         .contact-form button {
-            background: #64ffda;
-            color: #0a192f;
-            padding: 12px 30px;
+            background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+            color: #fff;
+            padding: 14px 36px;
             border: none;
             border-radius: 40px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
         }
         .contact-form button:hover {
-            background: #fff;
-            transform: scale(1.02);
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 212, 255, 0.35);
         }
         .social-links {
             display: flex;
@@ -319,37 +405,43 @@
             flex: 0 0 200px;
         }
         .social-links a {
-            background: #1e3a5f;
-            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 14px 22px;
             border-radius: 40px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #ccd6f6;
-            border: 1px solid #233554;
+            gap: 14px;
+            color: #b0b0d0;
+            border: 1px solid rgba(255, 255, 255, 0.04);
             transition: 0.3s;
+            backdrop-filter: blur(4px);
+            text-decoration: none;
         }
         .social-links a:hover {
-            background: #64ffda;
-            color: #0a192f;
-            border-color: #64ffda;
+            background: rgba(0, 212, 255, 0.12);
+            color: #fff;
+            border-color: #00d4ff;
+            transform: translateX(-5px);
         }
-        /* ===== FOOTER ===== */
+
+        /* ===== فوتر ===== */
         .footer {
-            margin-top: 45px;
+            margin-top: 50px;
             padding-top: 25px;
-            border-top: 1px solid #1e3a5f;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
-            color: #495670;
+            color: #6666aa;
             font-size: 0.9rem;
         }
         .footer i {
-            color: #64ffda;
+            color: #00d4ff;
         }
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 700px) {
+
+        /* ===== واکنش‌گرا ===== */
+        @media (max-width: 768px) {
             .container {
                 padding: 20px 18px;
+                border-radius: 28px;
             }
             .hamburger {
                 display: block;
@@ -358,8 +450,8 @@
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                gap: 12px;
-                padding: 15px 0 5px 0;
+                gap: 14px;
+                padding-top: 18px;
             }
             .nav-links.open {
                 display: flex;
@@ -367,10 +459,14 @@
             h1 {
                 font-size: 2.2rem;
             }
-            .avatar-lg {
-                width: 100px;
-                height: 100px;
-                font-size: 2.8rem;
+            .profile-wrap {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .avatar {
+                width: 120px;
+                height: 120px;
             }
             .contact-flex {
                 flex-direction: column;
@@ -388,435 +484,353 @@
 </head>
 <body>
 
-    <div class="container">
-        <!-- ===== HEADER ===== -->
-        <header class="navbar">
-            <div class="logo"><span>IESTM</span> | استوره</div>
-            <button class="hamburger" id="hamburger" aria-label="منو">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="#" data-page="home" class="active">خانه</a>
-                <a href="#" data-page="about">درباره من</a>
-                <a href="#" data-page="projects">پروژه‌ها</a>
-                <a href="#" data-page="products">محصولات</a> <!-- جدید -->
-                <a href="#" data-page="blog">مجله</a>
-                <a href="#" data-page="contact">تماس</a>
-            </nav>
-        </header>
+<div class="container">
+    <!-- ===== HEADER ===== -->
+    <header class="navbar">
+        <div class="logo"><span>IESTM</span> | استوره</div>
+        <button class="hamburger" id="hamburger" aria-label="منو">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="#" data-page="home" class="active">خانه</a>
+            <a href="#" data-page="about">درباره من</a>
+            <a href="#" data-page="projects">پروژه‌ها</a>
+            <a href="#" data-page="products">محصولات</a>
+            <a href="#" data-page="blog">مجله</a>
+            <a href="#" data-page="contact">تماس</a>
+        </nav>
+    </header>
 
-        <!-- ===== PAGES ===== -->
-
-        <!-- HOME -->
-        <section id="page-home" class="page active">
-            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:30px; margin-bottom:20px;">
-                <div class="avatar-lg">RA</div>
-                <div>
-                    <h1>رادمهر اصغری</h1>
-                    <div class="subhead">〈 استوره AI 〉</div>
-                    <p class="text-muted" style="margin-top:8px;">
-                        <i class="fas fa-map-pin" style="color:#64ffda;"></i> اصفهان، ایران
-                    </p>
-                </div>
-            </div>
-
-            <div class="bio-box">
-                <p>
-                    من رادمهر اصغری هستم، برنامه‌نویسی از اصفهان که عاشق خلق ابزارهای هوشمند و بازی‌های جذاب هستم.
-                    فعالیت من در حوزه توسعه نرم‌افزار با <strong>پایتون</strong> و <strong>وب</strong> است و همیشه به دنبال یادگیری فناوری‌های جدید هستم.
-                    کمپانی <strong>IESTM</strong> را بنیان نهادم تا ایده‌های خلاقانه‌ام را در قالب پروژه‌های متنوع و کاربردی به اجرا درآورم.
-                    اعتقاد دارم که تکنولوژی باید در خدمت انسان باشد و سعی می‌کنم با کدنویسی، زندگی را کمی ساده‌تر و جذاب‌تر کنم.
+    <!-- ===== HOME ===== -->
+    <section id="page-home" class="page active">
+        <div class="profile-wrap">
+            <img src="IMG_20260717_142636_716.jpg" alt="رادمهر اصغری" class="avatar" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Crect fill=%22%231a1a3e%22 width=%22140%22 height=%22140%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22%2300d4ff%22 font-family=%22Vazir%22%3ERA%3C/text%3E%3C/svg%3E';">
+            <div>
+                <h1>رادمهر اصغری</h1>
+                <div class="subhead">〈 استوره AI 〉</div>
+                <p class="text-muted" style="margin-top:8px;">
+                    <i class="fas fa-map-pin" style="color:#00d4ff;"></i> اصفهان، ایران
                 </p>
             </div>
-
-            <h2>مهارت‌های تخصصی</h2>
-            <div class="skills">
-                <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-                <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
-                <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-                <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
-                <span class="skill-tag"><i class="fas fa-code"></i> Scratch</span>
-                <span class="skill-tag"><i class="fas fa-gamepad"></i> Godot</span>
-            </div>
-
-            <h2>پروژه‌های برگزیده</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>IESTM OS</h3>
-                    <p>محیط دسکتاپ شبیه‌سازی‌شده با PyQt و پایتون</p>
-                    <span class="lang">Python</span>
-                </div>
-                <div class="project-card">
-                    <h3>بازی دوز سه‌بعدی</h3>
-                    <p>بازی فکری با گرافیک سه‌بعدی و هوش مصنوعی</p>
-                    <span class="lang">Python / Godot</span>
-                </div>
-                <div class="project-card">
-                    <h3>شبیه‌ساز منظومه شمسی</h3>
-                    <p>حرکت سیارات با افکت‌های بصری تعاملی</p>
-                    <span class="lang">Python / Web</span>
-                </div>
-                <!-- پروژه‌های جدید اضافه‌شده -->
-                <div class="project-card">
-                    <h3>ربات تلگرامی هوشمند</h3>
-                    <p>ربات پاسخگو با قابلیت یادگیری و مدیریت کارها</p>
-                    <span class="lang">Python / AI</span>
-                </div>
-                <div class="project-card">
-                    <h3>اپلیکیشن مدیریت مالی</h3>
-                    <p>نرم‌افزار دسکتاپ برای بودجه‌بندی و تحلیل هزینه</p>
-                    <span class="lang">Python / PyQt</span>
-                </div>
-                <div class="project-card">
-                    <h3>پلتفرم آموزش آنلاین</h3>
-                    <p>سیستم مدیریت دوره‌های آموزشی با امکانات تعاملی</p>
-                    <span class="lang">JavaScript / Node.js</span>
-                </div>
-            </div>
-            <p style="color:#495670; margin-top:10px;">
-                <i class="fas fa-arrow-left"></i> برای مشاهده همه پروژه‌ها به صفحه «پروژه‌ها» بروید.
-            </p>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="page-about" class="page">
-            <h1>درباره من</h1>
-            <div class="bio-box" style="font-size:1.05rem;">
-                <p>
-                    <strong>رادمهر اصغری</strong> متخلص به <strong>«استوره AI»</strong>، برنامه‌نویس و توسعه‌دهنده نرم‌افزار اهل اصفهان است.
-                    او از سنین نوجوانی وارد دنیای کدنویسی شد و با اشتیاق فراوان، زبان‌های مختلف برنامه‌نویسی را آموخت.
-                    پس از سال‌ها تجربه در حوزه‌های مختلف، تصمیم گرفت تا ایده‌های خود را در قالب یک برند شخصی به نام <strong>IESTM</strong> (مخفف Idea, Expression, Solution, Technology, Maker) متجلی کند.
-                </p>
-                <p style="margin-top:15px;">
-                    فعالیت‌های اصلی او شامل <strong>توسعه اپلیکیشن‌های دسکتاپ با پایتون</strong>، <strong>طراحی بازی‌های سه‌بعدی با Godot</strong>،
-                    و <strong>ساخت ابزارهای تحت وب</strong> با استفاده از HTML، CSS و جاوااسکریپت است.
-                    او به هوش مصنوعی و یادگیری ماشین نیز علاقه‌مند است و همواره به دنبال ترکیب این فناوری‌ها با پروژه‌های خود می‌باشد.
-                </p>
-                <p style="margin-top:15px;">
-                    رادمهر علاوه بر کدنویسی، به آموزش و به اشتراک‌گذاری دانش خود نیز علاقه دارد و مطالب آموزشی را در شبکه‌های اجتماعی و کانال ایتای خود منتشر می‌کند.
-                    هدف نهایی او ساخت ابزارهایی است که بتوانند تأثیر مثبتی بر زندگی روزمره افراد بگذارند و مرزهای خلاقیت را در دنیای نرم‌افزار جابجا کنند.
-                </p>
-            </div>
-            <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:20px;">
-                <div><i class="fas fa-calendar-alt" style="color:#64ffda;"></i> شروع فعالیت: ۱۳۹۸</div>
-                <div><i class="fas fa-map-pin" style="color:#64ffda;"></i> اصفهان، ایران</div>
-                <div><i class="fas fa-code" style="color:#64ffda;"></i> بیش از ۲۰ پروژه</div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="page-projects" class="page">
-            <h1>همه پروژه‌ها</h1>
-            <p class="text-muted" style="margin-bottom:20px;">مجموعه‌ای از دستاوردهای من در حوزه نرم‌افزار و بازی‌سازی</p>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>IESTM OS</h3>
-                    <p>محیط دسکتاپ ویندوزی ساخته شده با PyQt و پایتون – شامل ماشین‌حساب، دفترچه یادداشت و ابزارهای سیستمی</p>
-                    <span class="lang">Python / PyQt</span>
-                </div>
-                <div class="project-card">
-                    <h3>بازی دوز ۳D</h3>
-                    <p>نسخه سه‌بعدی بازی دوز با هوش مصنوعی ساده و گرافیک جذاب</p>
-                    <span class="lang">Python / Godot</span>
-                </div>
-                <div class="project-card">
-                    <h3>شبیه‌ساز منظومه شمسی</h3>
-                    <p>شبیه‌سازی کامل حرکت سیارات به دور خورشید با قابلیت بزرگنمایی و تعامل</p>
-                    <span class="lang">Python / WebGL</span>
-                </div>
-                <div class="project-card">
-                    <h3>صلوات‌شمار دیجیتال</h3>
-                    <p>اپلیکیشن سبک و زیبا برای شمارش و ثبت صلوات با افکت‌های صوتی</p>
-                    <span class="lang">JavaScript / HTML</span>
-                </div>
-                <div class="project-card">
-                    <h3>ابزار شخصی‌سازی متن</h3>
-                    <p>ویرایشگر آنلاین برای تغییر فونت، رنگ و استایل متن با خروجی HTML</p>
-                    <span class="lang">CSS / JS</span>
-                </div>
-                <div class="project-card">
-                    <h3>شبیه‌ساز فوتبال ۳D</h3>
-                    <p>بازی شبیه‌سازی فوتبال با فیزیک ساده و کنترل دو تیم</p>
-                    <span class="lang">Godot / GDScript</span>
-                </div>
-                <!-- پروژه‌های جدید -->
-                <div class="project-card">
-                    <h3>ربات تلگرامی مدیریت کارها</h3>
-                    <p>ربات هوشمند برای یادآوری، برنامه‌ریزی و پیگیری وظایف روزانه</p>
-                    <span class="lang">Python / Telebot</span>
-                </div>
-                <div class="project-card">
-                    <h3>اپلیکیشن تحلیل داده‌های ورزشی</h3>
-                    <p>نرم‌افزار دسکتاپ برای تحلیل عملکرد ورزشکاران با نمودارهای پویا</p>
-                    <span class="lang">Python / Pandas</span>
-                </div>
-                <div class="project-card">
-                    <h3>سیستم فروشگاهی تحت وب</h3>
-                    <p>پلتفرم مدیریت فروش، انبار و صورتحساب با رابط کاربری ساده</p>
-                    <span class="lang">JavaScript / React</span>
-                </div>
-                <div class="project-card">
-                    <h3>بازی معمایی ۳D</h3>
-                    <p>بازی ماجراجویی با حل معماهای تعاملی در محیط سه‌بعدی</p>
-                    <span class="lang">Godot / GDScript</span>
-                </div>
-                <div class="project-card">
-                    <h3>اسکرین‌ریکوردری با پایتون</h3>
-                    <p>ابزار ضبط صفحه با قابلیت افزودن واترمارک و ذخیره در فرمت‌های مختلف</p>
-                    <span class="lang">Python / OpenCV</span>
-                </div>
-                <div class="project-card">
-                    <h3>پلاگین مدیریت محتوای وردپرس</h3>
-                    <p>افزونه‌ی اختصاصی برای نمایش پروژه‌ها و نمونه‌کارها در وردپرس</p>
-                    <span class="lang">PHP / WordPress</span>
-                </div>
-            </div>
-            <p class="text-muted text-small">
-                <i class="fas fa-github"></i> برای دسترسی به کدهای من، به زودی مخزن گیت‌هاب منتشر خواهد شد.
-            </p>
-        </section>
-
-        <!-- ===== NEW: PRODUCTS PAGE ===== -->
-        <section id="page-products" class="page">
-            <h1>محصولات استوره</h1>
-            <p class="text-muted" style="margin-bottom:20px;">محصولات نرم‌افزاری و خدماتی که توسط تیم IESTM توسعه و ارائه می‌شوند</p>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>IESTM OS</h3>
-                    <p>سیستم‌عامل دسکتاپ سبک با ابزارهای کاربردی، مناسب برای برنامه‌نویسان و کاربران حرفه‌ای</p>
-                    <span class="lang">Python / PyQt</span>
-                </div>
-                <div class="project-card">
-                    <h3>ربات هوشمند استوره</h3>
-                    <p>ربات تلگرامی با قابلیت مدیریت کارها، یادآوری، جستجوی هوشمند و پاسخ به سوالات متداول</p>
-                    <span class="lang">Python / AI</span>
-                </div>
-                <div class="project-card">
-                    <h3>پکیج آموزش پایتون</h3>
-                    <p>دوره‌ی جامع برنامه‌نویسی پایتون به همراه پروژه‌های عملی و تمرین‌های تعاملی</p>
-                    <span class="lang">ویدئو / PDF</span>
-                </div>
-                <div class="project-card">
-                    <h3>بازی‌های سه‌بعدی Godot</h3>
-                    <p>مجموعه‌ای از بازی‌های آموزشی و سرگرمی ساخته شده با موتور گودوت، مناسب برای یادگیری</p>
-                    <span class="lang">Godot / GDScript</span>
-                </div>
-                <div class="project-card">
-                    <h3>ابزار تحلیل داده‌های حسابداری</h3>
-                    <p>نرم‌افزار دسکتاپ برای تحلیل تراکنش‌های مالی، پیش‌بینی هزینه و تولید گزارش</p>
-                    <span class="lang">Python / Pandas</span>
-                </div>
-                <div class="project-card">
-                    <h3>تم وردپرس حرفه‌ای IESTM</h3>
-                    <p>قالب اختصاصی وردپرس مناسب برای نمایش نمونه‌کارها، فروشگاهی و وبلاگ</p>
-                    <span class="lang">PHP / CSS / JS</span>
-                </div>
-            </div>
-            <p class="text-muted text-small" style="margin-top:20px;">
-                <i class="fas fa-shopping-bag"></i> برای دریافت اطلاعات بیشتر و خرید محصولات، از طریق صفحه تماس با ما در ارتباط باشید.
-            </p>
-        </section>
-
-        <!-- BLOG -->
-        <section id="page-blog" class="page">
-            <h1>مجله استوره</h1>
-            <p class="text-muted" style="margin-bottom:20px;">نوشته‌های من درباره برنامه‌نویسی، هوش مصنوعی و تجربه‌های شخصی</p>
-            <div class="blog-list">
-                <article class="blog-item">
-                    <span class="date">۱۴ فروردین ۱۴۰۴</span>
-                    <h3>چرا پایتون انتخاب اول من برای توسعه نرم‌افزار است؟</h3>
-                    <p>در این مقاله به دلایل سادگی، خوانایی و کتابخانه‌های قدرتمند پایتون پرداخته‌ام و تجربه خودم از ساخت پروژه‌های مختلف با این زبان را به اشتراک گذاشته‌ام.</p>
-                    <a href="#">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                </article>
-                <article class="blog-item">
-                    <span class="date">۲۸ اسفند ۱۴۰۳</span>
-                    <h3>آشنایی با موتور بازی‌سازی Godot؛ جایگزینی قدرتمند برای یونیتی</h3>
-                    <p>گودوت یک موتور متن‌باز و سبک است که من برای ساخت بازی‌های سه‌بعدی از آن استفاده می‌کنم. در این نوشته مزایا و معایب آن را بررسی کرده‌ام.</p>
-                    <a href="#">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                </article>
-                <article class="blog-item">
-                    <span class="date">۱۰ اسفند ۱۴۰۳</span>
-                    <h3>هوش مصنوعی در خدمت بازی‌سازی؛ تجربه من از ساخت یک دوز هوشمند</h3>
-                    <p>در این مقاله طراحی الگوریتم مینی‌مکس برای بازی دوز را توضیح داده‌ام و نشان داده‌ام که چطور می‌توان هوش مصنوعی ساده را به یک بازی اضافه کرد.</p>
-                    <a href="#">ادامه مطلب <i class="fas fa-arrow-left"></i></a>
-                </article>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="page-contact" class="page">
-            <h1>تماس با من</h1>
-            <p class="text-muted">خوشحال می‌شوم نظرات، پیشنهادات و سوالات شما را بشنوم.</p>
-            <div class="contact-flex">
-                <div class="contact-form">
-                    <form action="https://formspree.io/f/yourFormID" method="POST">
-                        <input type="text" name="name" placeholder="نام و نام خانوادگی" required />
-                        <input type="email" name="email" placeholder="ایمیل شما" required />
-                        <input type="text" name="subject" placeholder="موضوع" />
-                        <textarea name="message" rows="5" placeholder="پیام شما..." required></textarea>
-                        <button type="submit"><i class="fas fa-paper-plane"></i> ارسال پیام</button>
-                    </form>
-                    <p class="text-small text-muted" style="margin-top:12px;">
-                        <i class="fas fa-lock" style="color:#64ffda;"></i> اطلاعات شما محفوظ است.
-                    </p>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/radmehr_asghari" target="_blank"><i class="fab fa-instagram fa-lg"></i> اینستاگرام</a>
-                    <a href="https://eitaa.com/iestmcompany" target="_blank"><i class="fas fa-comment-dots fa-lg"></i> ایتا</a>
-                    <a href="#"><i class="fab fa-github fa-lg"></i> گیت‌هاب (به زودی)</a>
-                    <a href="#"><i class="fab fa-linkedin fa-lg"></i> لینکدین</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FOOTER ===== -->
-        <div class="footer">
-            <p>طراحی شده با <i class="fas fa-heart"></i> توسط رادمهر اصغری | استوره AI</p>
-            <p style="font-size:0.8rem; margin-top:5px;">همه حقوق محفوظ است © ۱۴۰۴</p>
         </div>
+
+        <div class="bio-box">
+            <p>
+                من رادمهر اصغری هستم، برنامه‌نویسی از اصفهان که عاشق خلق ابزارهای هوشمند و بازی‌های جذاب هستم.
+                فعالیت من در حوزه توسعه نرم‌افزار با <strong>پایتون</strong> و <strong>وب</strong> است و همیشه به دنبال یادگیری فناوری‌های جدید هستم.
+                کمپانی <strong>IESTM</strong> را بنیان نهادم تا ایده‌های خلاقانه‌ام را در قالب پروژه‌های متنوع و کاربردی به اجرا درآورم.
+                اعتقاد دارم که تکنولوژی باید در خدمت انسان باشد و سعی می‌کنم با کدنویسی، زندگی را کمی ساده‌تر و جذاب‌تر کنم.
+            </p>
+        </div>
+
+        <h2>مهارت‌های تخصصی</h2>
+        <div class="skills">
+            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="skill-tag"><i class="fas fa-code"></i> Scratch</span>
+            <span class="skill-tag"><i class="fas fa-gamepad"></i> Godot</span>
+            <span class="skill-tag"><i class="fas fa-cube"></i> Three.js</span>
+        </div>
+
+        <h2>پروژه‌های برگزیده</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>IESTM OS</h3>
+                <p>محیط دسکتاپ ویندوزی با Python/PyQt و قابلیت‌های سفارشی‌سازی پیشرفته</p>
+                <span class="lang">Python / PyQt</span>
+            </div>
+            <div class="project-card">
+                <h3>IESTM Notebook</h3>
+                <p>دفترچه یادداشت سبک با ذخیره‌سازی خودکار و تم تاریک</p>
+                <span class="lang">JavaScript / LocalStorage</span>
+            </div>
+            <div class="project-card">
+                <h3>منظومه شمسی</h3>
+                <p>شبیه‌سازی کامل منظومه شمسی با Three.js</p>
+                <span class="lang">Three.js / نجوم</span>
+            </div>
+            <div class="project-card">
+                <h3>هولوگرام کیهانی</h3>
+                <p>افکت سه‌بعدی روانگردان با ذرات نور و توروس نئونی</p>
+                <span class="lang">Three.js / هولوگرام</span>
+            </div>
+        </div>
+        <p class="text-muted text-small" style="margin-top:10px;">
+            <i class="fas fa-arrow-left"></i> برای مشاهده همه پروژه‌ها به صفحه «پروژه‌ها» بروید.
+        </p>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="page-about" class="page">
+        <h1>درباره من</h1>
+        <div class="bio-box">
+            <p>
+                <strong>رادمهر اصغری</strong> متخلص به <strong>«استوره AI»</strong>، برنامه‌نویس و توسعه‌دهنده نرم‌افزار اهل اصفهان است.
+                او از سنین نوجوانی وارد دنیای کدنویسی شد و با اشتیاق فراوان، زبان‌های مختلف برنامه‌نویسی را آموخت.
+                پس از سال‌ها تجربه در حوزه‌های مختلف، تصمیم گرفت تا ایده‌های خود را در قالب یک برند شخصی به نام <strong>IESTM</strong> (مخفف Idea, Expression, Solution, Technology, Maker) متجلی کند.
+            </p>
+            <p style="margin-top:15px;">
+                فعالیت‌های اصلی او شامل <strong>توسعه اپلیکیشن‌های دسکتاپ با پایتون</strong>، <strong>طراحی بازی‌های سه‌بعدی با Three.js</strong>،
+                و <strong>ساخت ابزارهای تحت وب</strong> با استفاده از HTML، CSS و جاوااسکریپت است.
+                او به هوش مصنوعی و یادگیری ماشین نیز علاقه‌مند است و همواره به دنبال ترکیب این فناوری‌ها با پروژه‌های خود می‌باشد.
+            </p>
+            <p style="margin-top:15px;">
+                رادمهر علاوه بر کدنویسی، به آموزش و به اشتراک‌گذاری دانش خود نیز علاقه دارد و مطالب آموزشی را در شبکه‌های اجتماعی و کانال ایتای خود منتشر می‌کند.
+                هدف نهایی او ساخت ابزارهایی است که بتوانند تأثیر مثبتی بر زندگی روزمره افراد بگذارند و مرزهای خلاقیت را در دنیای نرم‌افزار جابجا کنند.
+            </p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:25px; margin-top:20px;">
+            <div><i class="fas fa-calendar-alt" style="color:#00d4ff;"></i> شروع فعالیت: ۱۳۹۸</div>
+            <div><i class="fas fa-map-pin" style="color:#00d4ff;"></i> اصفهان، ایران</div>
+            <div><i class="fas fa-code" style="color:#00d4ff;"></i> بیش از ۲۰ پروژه</div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="page-projects" class="page">
+        <h1>همه پروژه‌ها</h1>
+        <p class="text-muted" style="margin-bottom:20px;">مجموعه‌ای از دستاوردهای من در حوزه نرم‌افزار و بازی‌سازی</p>
+        <div class="projects-grid">
+            <div class="project-card"><h3><a href="#">IESTM OS</a></h3><p>محیط دسکتاپ ویندوزی با PyQt</p><span class="lang">Python / PyQt</span></div>
+            <div class="project-card"><h3><a href="#">بازی سه‌بعدی دوز</a></h3><p>نسخه سه‌بعدی بازی کلاسیک دوز</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="#">IESTM Notebook</a></h3><p>دفترچه یادداشت با ذخیره‌سازی خودکار</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="#">صلوات‌شمار</a></h3><p>ابزار دیجیتال شمارش صلوات</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/manzoomeh/" target="_blank">منظومه شمسی</a></h3><p>شبیه‌سازی کامل منظومه شمسی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/abarmokaab/" target="_blank">ابر مکعب</a></h3><p>تسراکت با خطوط نئونی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/hologeram/" target="_blank">هولوگرام کیهانی</a></h3><p>افکت روانگردان سه‌بعدی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmcompany-creator.github.io/TehranCity/" target="_blank">تهران سیتی</a></h3><p>بازی رانندگی در تهران</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/zibanvis/" target="_blank">زیبـانویس اسم</a></h3><p>ابزار شخصی‌سازی متن</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/jok-dynamite/" target="_blank">ایستم جوک دینامیت</a></h3><p>پروژه طنز و سرگرمی</p><span class="lang">سرگرمی</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/football-3d/" target="_blank">فوتبال سه‌بعدی</a></h3><p>شبیه‌ساز فوتبال سه‌بعدی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/iestm-website/" target="_blank">سایت کمپانی IESTM</a></h3><p>وبسایت رسمی معرفی کمپانی</p><span class="lang">HTML / CSS</span></div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section id="page-products" class="page">
+        <h1>محصولات استوره</h1>
+        <p class="text-muted" style="margin-bottom:20px;">محصولات نرم‌افزاری و خدماتی تیم IESTM</p>
+        <div class="projects-grid">
+            <div class="project-card"><h3><a href="#">IESTM OS</a></h3><p>سیستم‌عامل دسکتاپ ویندوزی</p><span class="lang">Python</span></div>
+            <div class="project-card"><h3><a href="#">بازی سه‌بعدی دوز</a></h3><p>بازی فکری سه‌بعدی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="#">IESTM Notebook</a></h3><p>دفترچه یادداشت هوشمند</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="#">صلوات‌شمار دیجیتال</a></h3><p>ابزار شمارش صلوات</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/manzoomeh/" target="_blank">منظومه شمسی</a></h3><p>شبیه‌ساز نجومی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/abarmokaab/" target="_blank">ابر مکعب</a></h3><p>تجسم تسراکت</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/hologeram/" target="_blank">هولوگرام کیهانی</a></h3><p>افکت هولوگرام</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmcompany-creator.github.io/TehranCity/" target="_blank">تهران سیتی</a></h3><p>بازی رانندگی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/zibanvis/" target="_blank">زیبـانویس اسم</a></h3><p>ابزار شخصی‌سازی</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/jok-dynamite/" target="_blank">ایستم جوک دینامیت</a></h3><p>سرگرمی طنز</p><span class="lang">طنز</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/football-3d/" target="_blank">فوتبال سه‌بعدی</a></h3><p>شبیه‌ساز فوتبال</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/iestm-website/" target="_blank">سایت کمپانی</a></h3><p>وبسایت رسمی</p><span class="lang">HTML/CSS</span></div>
+        </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section id="page-blog" class="page">
+        <h1>مجله استوره</h1>
+        <p class="text-muted" style="margin-bottom:20px;">نوشته‌های من درباره برنامه‌نویسی، هوش مصنوعی و تجربه‌های شخصی</p>
+        <div class="blog-list">
+            <!-- مقاله ۱ -->
+            <article class="blog-item">
+                <span class="date">۱۴ فروردین ۱۴۰۴</span>
+                <h3>چرا پایتون انتخاب اول من برای توسعه نرم‌افزار است؟</h3>
+                <p class="summary">در این مقاله به دلایل سادگی، خوانایی و کتابخانه‌های قدرتمند پایتون پرداخته‌ام.</p>
+                <button class="read-more-btn" data-target="post1-full">ادامه مطلب <i class="fas fa-arrow-left"></i></button>
+                <div id="post1-full" class="full-content hidden">
+                    <p>پایتون برای من فقط یک زبان برنامه‌نویسی نیست؛ یک همراه همیشگی در مسیر خلق ایده‌هاست. از اولین روزهایی که با <code>print("Hello World")</code> آشنا شدم، حس کردم این زبان با من حرف می‌زند. شاید برای خیلی‌ها پایتون یک انتخاب ساده‌لوحانه به نظر برسد، اما وقتی پای پروژه‌های واقعی به میان می‌آید، قدرت واقعی‌اش نمایان می‌شود.</p>
+                    <p><strong>۱. خوانایی مانند شعر</strong><br>کد پایتون شبیه به یک داستان روان است. وقتی تیمی مشغول توسعهٔ یک نرم‌افزار بزرگ است، خوانایی کد حرف اول را می‌زند. پایتون با حذف نشانه‌های اضافی و استفاده از فاصله‌گذاری معناگرا، به ما اجازه می‌دهد که به جای درگیر شدن با نحو (Syntax)، روی منطق و راه‌حل تمرکز کنیم. این ویژگی در پروژه‌هایی مثل <strong>IESTM OS</strong> که بیش از ۵۰۰۰ خط کد دارد، تفاوت چشمگیری ایجاد کرد.</p>
+                    <p><strong>۲. کتابخانه‌های همه‌چیز تمام</strong><br>از PyQt برای ساخت دسکتاپ گرفته تا TensorFlow برای یادگیری ماشین، پایتون کتابخانه‌ای برای هر نیازی دارد. من برای ساخت <strong>شبیه‌ساز منظومه شمسی</strong> از <code>Pygame</code> و <code>NumPy</code> استفاده کردم و در کمتر از یک هفته به نتیجه رسیدم. این سرعت توسعه، برای یک برنامه‌نویس مستقل مثل من طلایی است.</p>
+                    <p><strong>۳. جامعهٔ بزرگ و پشتیبانی بی‌نظیر</strong><br>هر سوالی که داشتم، در انجمن‌ها یا Stack Overflow پاسخ داده شده بود. این جامعهٔ فعال باعث می‌شود که هیچ‌وقت احساس تنهایی نکنی. حتی وقتی در پروژهٔ <strong>بازی دوز سه‌بعدی</strong> به مشکل درخت تصمیم (Decision Tree) برخوردم، چند ساعت بعد یک پاسخ کامل از یکی از توسعه‌دهندگان اصلی کتابخانه دریافت کردم.</p>
+                    <p><strong>۴. از اسکریپت تا اپلیکیشن</strong><br>پایتون به من این امکان را داد که با یک کد، هم یک ابزار خط فرمان بنویسم و هم همان کد را با یک لایه رابط کاربری (مثل PyQt) به یک اپلیکیشن حرفه‌ای تبدیل کنم. این انعطاف‌پذیری، یکی از دلایلی است که <strong>IESTM</strong> را بر پایهٔ پایتون بنا نهادم.</p>
+                    <p>در نهایت، پایتون برای من فقط یک ابزار نیست؛ یک فلسفه است. فلسفهٔ سادگی، کارایی و لذت بردن از فرایند خلق. اگر تازه‌وارد هستید، شک نکنید که این زبان دروازهٔ شما به دنیای جذاب برنامه‌نویسی خواهد بود.</p>
+                    <button class="close-btn" data-target="post1-full">بستن <i class="fas fa-times"></i></button>
+                </div>
+            </article>
+            <!-- مقاله ۲ -->
+            <article class="blog-item">
+                <span class="date">۲۸ اسفند ۱۴۰۳</span>
+                <h3>آشنایی با موتور بازی‌سازی Godot؛ جایگزینی قدرتمند برای یونیتی</h3>
+                <p class="summary">گودوت یک موتور متن‌باز و سبک است که من برای ساخت بازی‌های سه‌بعدی از آن استفاده می‌کنم.</p>
+                <button class="read-more-btn" data-target="post2-full">ادامه مطلب <i class="fas fa-arrow-left"></i></button>
+                <div id="post2-full" class="full-content hidden">
+                    <p>وقتی برای اولین بار Godot را اجرا کردم، با خودم گفتم: «این همان چیزی است که دنبالش بودم». سبک، متن‌باز، و با یک زبان اختصاصی به نام GDScript که شباهت زیادی به پایتون دارد. اما آیا واقعاً می‌تواند جایگزین یونیتی شود؟ بعد از ساخت چند بازی با هر دو موتور، به یک نتیجهٔ جالب رسیدم.</p>
+                    <p><strong>۱. حجم کم و راه‌اندازی سریع</strong><br>نصب Godot کمتر از ۱۰۰ مگابایت است و در کمتر از یک دقیقه آمادهٔ کار می‌شود. این در حالی است که یونیتی چند گیگابایت فضا اشغال می‌کند و فرایند نصب آن پیچیده‌تر است. برای من که روی یک لپ‌تاپ معمولی کار می‌کنم، این تفاوت حیاتی است.</p>
+                    <p><strong>۲. GDScript؛ پایتونی‌ترین زبان</strong><br>اگر با پایتون آشنا باشید، یادگیری GDScript کمتر از یک روز طول می‌کشد. سینتکس ساده و شباهت به پایتون باعث شد که من در پروژهٔ <strong>بازی فوتبال سه‌بعدی</strong>، خیلی سریع بتوانم منطق حرکت بازیکنان را پیاده‌سازی کنم. البته Godot از C# و C++ هم پشتیبانی می‌کند، اما GDScript برای من انتخابی طبیعی بود.</p>
+                    <p><strong>۳. صحنه‌محوری (Scene System)</strong><br>یکی از قوی‌ترین ویژگی‌های Godot، سیستم صحنه‌هاست. هر صحنه یک بستهٔ کامل از آبجکت‌ها، اسکریپت‌ها و منابع است که می‌تواند به راحتی در صحنه‌های دیگر استفاده شود. این معماری، کدنویسی را ماژولار و قابل نگهداری می‌کند. مثلاً در <strong>بازی دوز سه‌بعدی</strong>، صفحهٔ بازی، صفحهٔ تنظیمات و صفحهٔ پایان بازی هر کدام یک صحنهٔ مجزا هستند که به سادگی با هم ارتباط برقرار می‌کنند.</p>
+                    <p><strong>۴. جامعهٔ در حال رشد</strong><br>اگرچه Godot هنوز به بزرگی جامعهٔ یونیتی نیست، اما سرعت رشد آن شگفت‌انگیز است. مستندات روزبه‌روز کامل‌تر می‌شوند و پلاگین‌های جدیدی برای آن ساخته می‌شود. من شخصاً از انجمن Godot فارسی هم بسیار استفاده کرده‌ام و پاسخ‌های خوبی دریافت کرده‌ام.</p>
+                    <p><strong>۵. محدودیت‌ها</strong><br>برای پروژه‌های بسیار بزرگ و گرافیک فوق‌واقع‌گرایانه، یونیتی همچنان جلوتر است. اما برای بازی‌های ایندی، آموزشی، یا حتی بازی‌های سه‌بعدی متوسط، Godot یک انتخاب عالی است. من با Godot توانستم <strong>شبیه‌ساز فوتبال</strong> و <strong>منظومه شمسی</strong> را بدون هیچ مشکلی توسعه دهم.</p>
+                    <p>در یک جمله: اگر به دنبال یک موتور سبک، رایگان و با جامعهٔ خوب هستید، Godot را جدی بگیرید. من از زمانی که به Godot روی آوردم، سرعت توسعهٔ بازی‌هایم حداقل دو برابر شده است.</p>
+                    <button class="close-btn" data-target="post2-full">بستن <i class="fas fa-times"></i></button>
+                </div>
+            </article>
+            <!-- مقاله ۳ -->
+            <article class="blog-item">
+                <span class="date">۱۰ اسفند ۱۴۰۳</span>
+                <h3>هوش مصنوعی در خدمت بازی‌سازی؛ تجربه من از ساخت یک دوز هوشمند</h3>
+                <p class="summary">در این مقاله طراحی الگوریتم مینی‌مکس برای بازی دوز را توضیح داده‌ام.</p>
+                <button class="read-more-btn" data-target="post3-full">ادامه مطلب <i class="fas fa-arrow-left"></i></button>
+                <div id="post3-full" class="full-content hidden">
+                    <p>همیشه دوست داشتم بازی‌هایی بسازم که نه تنها سرگرم‌کننده باشند، بلکه چالشی هوشمندانه هم ایجاد کنند. به همین دلیل تصمیم گرفتم یک <strong>بازی دوز سه‌بعدی</strong> با هوش مصنوعی بسازم. اما سوال اصلی این بود: چگونه می‌توان یک کامپیوتر را به گونه‌ای برنامه‌ریزی کرد که نه تنها حرکات تصادفی انجام ندهد، بلکه بتواند حریف را شکست دهد؟ جواب در الگوریتم <strong>مینی‌مکس (Minimax)</strong> نهفته بود.</p>
+                    <p><strong>الگوریتم مینی‌مکس چیست؟</strong><br>مینی‌مکس یک الگوریتم تصمیم‌گیری در بازی‌های دو نفره است که با بررسی تمام حرکات ممکن، بهترین حرکت را انتخاب می‌کند. فرض کنید شما در حال بازی دوز هستید. کامپیوتر تمام حالت‌های ممکن صفحه را تا چند حرکت جلوتر شبیه‌سازی می‌کند و با یک تابع ارزیابی، امتیاز هر حالت را محاسبه می‌کند. سپس حرکتی را انتخاب می‌کند که بیشترین امتیاز را برای خود و کمترین امتیاز را برای حریف به همراه داشته باشد. این مکانیسم «بیشینه‌سازی برای خود و کمینه‌سازی برای حریف» دقیقاً همان چیزی است که نام «مینی‌مکس» از آن گرفته شده است.</p>
+                    <p><strong>پیاده‌سازی در بازی دوز سه‌بعدی</strong><br>در پروژه‌ام، صفحهٔ دوز را به صورت یک آرایهٔ دوبعدی (۳×۳) مدل کردم. سپس تابع <code>minimax(board, depth, is_maximizing)</code> را نوشتم که به صورت بازگشتی تمام حالت‌ها را تا عمق ۹ (تعداد خانه‌های خالی) بررسی می‌کند. برای بهینه‌سازی، از هرس آلفا-بتا (Alpha-Beta Pruning) استفاده کردم تا شاخه‌های غیرضروری را قطع کند و سرعت را بالا ببرد.</p>
+                    <p><strong>چالش‌ها و راه‌حل‌ها</strong><br>بزرگترین چالش، مدیریت عمق جستجو بود. اگر عمق را زیاد می‌کردم، کامپیوتر خیلی کند می‌شد و اگر کم می‌کردم، هوشمندی لازم را نداشت. پس از چندین آزمایش، به عمق ۵ رسیدم که تعادل خوبی بین سرعت و هوشمندی ایجاد می‌کرد. همچنین برای جلوگیری از یکنواختی، یک تابع ارزیابی پویا نوشتم که به موقعیت‌های مرکزی و گوشه‌ها امتیاز بیشتری می‌دهد، چون این مکان‌ها در استراتژی دوز اهمیت بیشتری دارند.</p>
+                    <p><strong>نتیجهٔ نهایی</strong><br>هوش مصنوعی ساخته‌شده با مینی‌مکس، در بیش از ۹۰٪ بازی‌ها پیروز می‌شود و حتی بازیکنان حرفه‌ای را به چالش می‌کشد. این تجربه به من نشان داد که با الگوریتم‌های ساده اما هوشمندانه، می‌توان بازی‌های جذاب و چالش‌برانگیزی خلق کرد. من این الگوریتم را در <strong>بازی دوز سه‌بعدی</strong> که در بخش پروژه‌ها موجود است، پیاده‌سازی کرده‌ام و امیدوارم که شما هم از بازی کردن با آن لذت ببرید.</p>
+                    <p>اگر به فکر اضافه کردن هوش مصنوعی به بازی‌های خود هستید، توصیه می‌کنم از مینی‌مکس شروع کنید. ساده، قدرتمند و در عین حال بسیار آموزنده است.</p>
+                    <button class="close-btn" data-target="post3-full">بستن <i class="fas fa-times"></i></button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="page-contact" class="page">
+        <h1>تماس با من</h1>
+        <p class="text-muted">خوشحال می‌شوم نظرات، پیشنهادات و سوالات شما را بشنوم.</p>
+        <div class="contact-flex">
+            <div class="contact-form">
+                <form action="https://formspree.io/f/yourFormID" method="POST">
+                    <input type="text" name="name" placeholder="نام و نام خانوادگی" required>
+                    <input type="email" name="email" placeholder="ایمیل شما" required>
+                    <input type="text" name="subject" placeholder="موضوع">
+                    <textarea name="message" rows="5" placeholder="پیام شما..." required></textarea>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> ارسال پیام</button>
+                </form>
+                <p class="text-small text-muted" style="margin-top:12px;">
+                    <i class="fas fa-lock" style="color:#00d4ff;"></i> اطلاعات شما محفوظ است.
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/radmehr_asghari" target="_blank"><i class="fab fa-instagram fa-lg"></i> اینستاگرام</a>
+                <a href="https://eitaa.com/iestmcompany" target="_blank"><i class="fas fa-comment-dots fa-lg"></i> ایتا</a>
+                <a href="#"><i class="fab fa-github fa-lg"></i> گیت‌هاب (به زودی)</a>
+                <a href="#"><i class="fab fa-linkedin fa-lg"></i> لینکدین</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer">
+        <p>طراحی شده با <i class="fas fa-heart"></i> توسط رادمهر اصغری | استوره AI</p>
+        <p style="font-size:0.8rem; margin-top:5px;">همه حقوق محفوظ است © ۱۴۰۴</p>
     </div>
+</div>
 
-    <!-- ===== JAVASCRIPT ===== -->
-    <script>
-        (function() {
-            // ---------- Navigation ----------
-            const pages = {
-                home: document.getElementById('page-home'),
-                about: document.getElementById('page-about'),
-                projects: document.getElementById('page-projects'),
-                products: document.getElementById('page-products'), // جدید
-                blog: document.getElementById('page-blog'),
-                contact: document.getElementById('page-contact')
-            };
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    (function() {
+        // ---------- Navigation ----------
+        const pages = {
+            home: document.getElementById('page-home'),
+            about: document.getElementById('page-about'),
+            projects: document.getElementById('page-projects'),
+            products: document.getElementById('page-products'),
+            blog: document.getElementById('page-blog'),
+            contact: document.getElementById('page-contact')
+        };
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('navLinks');
 
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const hamburger = document.getElementById('hamburger');
-            const navList = document.getElementById('navLinks');
-
-            // صفحه‌ای که در URL هش مشخص شده را فعال می‌کند
-            function navigateTo(pageId) {
-                // مخفی کردن همه صفحات
-                Object.keys(pages).forEach(key => {
-                    pages[key].classList.remove('active');
-                });
-                // نمایش صفحه مورد نظر
-                if (pages[pageId]) {
-                    pages[pageId].classList.add('active');
-                }
-                // به‌روزرسانی کلاس active در منو
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.dataset.page === pageId) {
-                        link.classList.add('active');
-                    }
-                });
-                // تغییر عنوان و متا دسکریپشن (سئو)
-                const titles = {
-                    home: 'رادمهر اصغری | استوره AI - برنامه‌نویس و بنیانگذار IESTM',
-                    about: 'درباره من | رادمهر اصغری - استوره AI',
-                    projects: 'پروژه‌ها | رادمهر اصغری - استوره AI',
-                    products: 'محصولات استوره | نرم‌افزارهای IESTM', // جدید
-                    blog: 'مجله استوره | مقالات برنامه‌نویسی و هوش مصنوعی',
-                    contact: 'تماس با من | رادمهر اصغری - استوره AI'
-                };
-                const descs = {
-                    home: 'وبسایت رسمی رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM. پروژه‌های پایتون، بازی‌سازی و هوش مصنوعی.',
-                    about: 'بیوگرافی کامل رادمهر اصغری، برنامه‌نویس اهل اصفهان و بنیانگذار برند IESTM.',
-                    projects: 'لیست کامل پروژه‌های نرم‌افزاری و بازی‌های ساخته شده توسط رادمهر اصغری (استوره AI).',
-                    products: 'محصولات نرم‌افزاری و خدماتی تیم IESTM شامل ربات هوشمند، پکیج‌های آموزشی، بازی و ابزارهای دسکتاپ.',
-                    blog: 'مقالات آموزشی و تجربه‌های شخصی رادمهر اصغری در حوزه برنامه‌نویسی، پایتون، گودوت و هوش مصنوعی.',
-                    contact: 'راه‌های ارتباطی با رادمهر اصغری - فرم تماس و شبکه‌های اجتماعی.'
-                };
-                document.title = titles[pageId] || titles.home;
-                document.querySelector('meta[name="description"]').setAttribute('content', descs[pageId] || descs.home);
-                // به‌روزرسانی URL (بدون ریلود)
-                if (history.pushState) {
-                    const newUrl = window.location.pathname + '#' + pageId;
-                    history.pushState({ page: pageId }, '', newUrl);
-                }
-                // بستن منوی همبرگر در موبایل
-                navList.classList.remove('open');
-            }
-
-            // رویداد کلیک روی لینک‌های منو
+        function navigateTo(pageId) {
+            Object.keys(pages).forEach(key => pages[key].classList.remove('active'));
+            if (pages[pageId]) pages[pageId].classList.add('active');
             navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const page = this.dataset.page;
-                    if (page) navigateTo(page);
-                });
+                link.classList.remove('active');
+                if (link.dataset.page === pageId) link.classList.add('active');
             });
-
-            // همبرگر
-            hamburger.addEventListener('click', function() {
-                navList.classList.toggle('open');
-            });
-
-            // بازخوانی بر اساس هش URL هنگام لود یا تغییر history
-            function handleHash() {
-                const hash = window.location.hash.replace('#', '');
-                if (hash && pages[hash]) {
-                    navigateTo(hash);
-                } else {
-                    navigateTo('home');
-                }
+            // update meta
+            const titles = {
+                home: 'رادمهر اصغری | استوره AI',
+                about: 'درباره من | رادمهر اصغری',
+                projects: 'پروژه‌ها | رادمهر اصغری',
+                products: 'محصولات | استوره AI',
+                blog: 'مجله استوره | مقالات',
+                contact: 'تماس با من | رادمهر اصغری'
+            };
+            document.title = titles[pageId] || titles.home;
+            if (history.pushState) {
+                history.pushState({ page: pageId }, '', '#' + pageId);
             }
+            navList.classList.remove('open');
+        }
 
-            window.addEventListener('hashchange', handleHash);
-            window.addEventListener('popstate', function(e) {
-                if (e.state && e.state.page) {
-                    navigateTo(e.state.page);
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.dataset.page;
+                if (page) navigateTo(page);
+            });
+        });
+
+        hamburger.addEventListener('click', function() {
+            navList.classList.toggle('open');
+        });
+
+        function handleHash() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && pages[hash]) navigateTo(hash);
+            else navigateTo('home');
+        }
+        window.addEventListener('hashchange', handleHash);
+        window.addEventListener('popstate', function(e) {
+            if (e.state && e.state.page) navigateTo(e.state.page);
+            else handleHash();
+        });
+        handleHash();
+
+        // ---------- Blog Read More ----------
+        document.querySelectorAll('.read-more-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.dataset.target;
+                const full = document.getElementById(targetId);
+                if (!full) return;
+                const hidden = full.classList.contains('hidden');
+                if (hidden) {
+                    full.classList.remove('hidden');
+                    this.innerHTML = 'بستن <i class="fas fa-times"></i>';
+                    this.classList.add('close-btn');
+                    this.classList.remove('read-more-btn');
                 } else {
-                    handleHash();
+                    full.classList.add('hidden');
+                    this.innerHTML = 'ادامه مطلب <i class="fas fa-arrow-left"></i>';
+                    this.classList.remove('close-btn');
+                    this.classList.add('read-more-btn');
                 }
             });
+        });
+        document.querySelectorAll('.close-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.dataset.target;
+                const full = document.getElementById(targetId);
+                if (!full) return;
+                full.classList.add('hidden');
+                const article = full.closest('.blog-item');
+                const readBtn = article.querySelector('.read-more-btn');
+                if (readBtn) {
+                    readBtn.innerHTML = 'ادامه مطلب <i class="fas fa-arrow-left"></i>';
+                    readBtn.classList.remove('close-btn');
+                    readBtn.classList.add('read-more-btn');
+                }
+            });
+        });
 
-            // اجرا در اولین بار
-            handleHash();
-
-            // ---------- داده‌های ساختاریافته JSON-LD (سئو) ----------
-            function addStructuredData() {
-                const script = document.createElement('script');
-                script.type = 'application/ld+json';
-                script.textContent = JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "Person",
-                    "name": "رادمهر اصغری",
-                    "alternateName": "استوره AI",
-                    "jobTitle": "برنامه‌نویس و توسعه‌دهنده نرم‌افزار",
-                    "url": "https://iestm.ir",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressLocality": "اصفهان",
-                        "addressCountry": "IR"
-                    },
-                    "sameAs": [
-                        "https://www.instagram.com/radmehr_asghari",
-                        "https://eitaa.com/iestmcompany"
-                    ],
-                    "knowsAbout": ["Python", "Godot", "JavaScript", "HTML", "CSS", "Scratch"],
-                    "worksFor": {
-                        "@type": "Organization",
-                        "name": "IESTM"
-                    }
-                });
-                document.head.appendChild(script);
-
-                // Structured data for Website
-                const siteScript = document.createElement('script');
-                siteScript.type = 'application/ld+json';
-                siteScript.textContent = JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "WebSite",
-                    "url": "https://iestm.ir",
-                    "name": "وبسایت استوره AI",
-                    "description": "وبسایت رسمی رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM"
-                });
-                document.head.appendChild(siteScript);
-            }
-            addStructuredData();
-
-        })();
-    </script>
+        // ---------- Structured Data ----------
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "رادمهر اصغری",
+            "alternateName": "استوره AI",
+            "url": "https://iestm.ir",
+            "sameAs": ["https://www.instagram.com/radmehr_asghari", "https://eitaa.com/iestmcompany"],
+            "worksFor": { "@type": "Organization", "name": "IESTM" }
+        });
+        document.head.appendChild(script);
+    })();
+</script>
 </body>
 </html>
