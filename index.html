@@ -205,7 +205,7 @@
         .skill-tag i {
             margin-left: 8px;
         }
-        /* ===== PROJECT CARDS ===== */
+        /* ===== PROJECT / PRODUCT CARDS ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -399,6 +399,7 @@
                 <a href="#" data-page="home" class="active">خانه</a>
                 <a href="#" data-page="about">درباره من</a>
                 <a href="#" data-page="projects">پروژه‌ها</a>
+                <a href="#" data-page="products">محصولات</a> <!-- جدید -->
                 <a href="#" data-page="blog">مجله</a>
                 <a href="#" data-page="contact">تماس</a>
             </nav>
@@ -454,6 +455,22 @@
                     <h3>شبیه‌ساز منظومه شمسی</h3>
                     <p>حرکت سیارات با افکت‌های بصری تعاملی</p>
                     <span class="lang">Python / Web</span>
+                </div>
+                <!-- پروژه‌های جدید اضافه‌شده -->
+                <div class="project-card">
+                    <h3>ربات تلگرامی هوشمند</h3>
+                    <p>ربات پاسخگو با قابلیت یادگیری و مدیریت کارها</p>
+                    <span class="lang">Python / AI</span>
+                </div>
+                <div class="project-card">
+                    <h3>اپلیکیشن مدیریت مالی</h3>
+                    <p>نرم‌افزار دسکتاپ برای بودجه‌بندی و تحلیل هزینه</p>
+                    <span class="lang">Python / PyQt</span>
+                </div>
+                <div class="project-card">
+                    <h3>پلتفرم آموزش آنلاین</h3>
+                    <p>سیستم مدیریت دوره‌های آموزشی با امکانات تعاملی</p>
+                    <span class="lang">JavaScript / Node.js</span>
                 </div>
             </div>
             <p style="color:#495670; margin-top:10px;">
@@ -522,9 +539,81 @@
                     <p>بازی شبیه‌سازی فوتبال با فیزیک ساده و کنترل دو تیم</p>
                     <span class="lang">Godot / GDScript</span>
                 </div>
+                <!-- پروژه‌های جدید -->
+                <div class="project-card">
+                    <h3>ربات تلگرامی مدیریت کارها</h3>
+                    <p>ربات هوشمند برای یادآوری، برنامه‌ریزی و پیگیری وظایف روزانه</p>
+                    <span class="lang">Python / Telebot</span>
+                </div>
+                <div class="project-card">
+                    <h3>اپلیکیشن تحلیل داده‌های ورزشی</h3>
+                    <p>نرم‌افزار دسکتاپ برای تحلیل عملکرد ورزشکاران با نمودارهای پویا</p>
+                    <span class="lang">Python / Pandas</span>
+                </div>
+                <div class="project-card">
+                    <h3>سیستم فروشگاهی تحت وب</h3>
+                    <p>پلتفرم مدیریت فروش، انبار و صورتحساب با رابط کاربری ساده</p>
+                    <span class="lang">JavaScript / React</span>
+                </div>
+                <div class="project-card">
+                    <h3>بازی معمایی ۳D</h3>
+                    <p>بازی ماجراجویی با حل معماهای تعاملی در محیط سه‌بعدی</p>
+                    <span class="lang">Godot / GDScript</span>
+                </div>
+                <div class="project-card">
+                    <h3>اسکرین‌ریکوردری با پایتون</h3>
+                    <p>ابزار ضبط صفحه با قابلیت افزودن واترمارک و ذخیره در فرمت‌های مختلف</p>
+                    <span class="lang">Python / OpenCV</span>
+                </div>
+                <div class="project-card">
+                    <h3>پلاگین مدیریت محتوای وردپرس</h3>
+                    <p>افزونه‌ی اختصاصی برای نمایش پروژه‌ها و نمونه‌کارها در وردپرس</p>
+                    <span class="lang">PHP / WordPress</span>
+                </div>
             </div>
             <p class="text-muted text-small">
                 <i class="fas fa-github"></i> برای دسترسی به کدهای من، به زودی مخزن گیت‌هاب منتشر خواهد شد.
+            </p>
+        </section>
+
+        <!-- ===== NEW: PRODUCTS PAGE ===== -->
+        <section id="page-products" class="page">
+            <h1>محصولات استوره</h1>
+            <p class="text-muted" style="margin-bottom:20px;">محصولات نرم‌افزاری و خدماتی که توسط تیم IESTM توسعه و ارائه می‌شوند</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>IESTM OS</h3>
+                    <p>سیستم‌عامل دسکتاپ سبک با ابزارهای کاربردی، مناسب برای برنامه‌نویسان و کاربران حرفه‌ای</p>
+                    <span class="lang">Python / PyQt</span>
+                </div>
+                <div class="project-card">
+                    <h3>ربات هوشمند استوره</h3>
+                    <p>ربات تلگرامی با قابلیت مدیریت کارها، یادآوری، جستجوی هوشمند و پاسخ به سوالات متداول</p>
+                    <span class="lang">Python / AI</span>
+                </div>
+                <div class="project-card">
+                    <h3>پکیج آموزش پایتون</h3>
+                    <p>دوره‌ی جامع برنامه‌نویسی پایتون به همراه پروژه‌های عملی و تمرین‌های تعاملی</p>
+                    <span class="lang">ویدئو / PDF</span>
+                </div>
+                <div class="project-card">
+                    <h3>بازی‌های سه‌بعدی Godot</h3>
+                    <p>مجموعه‌ای از بازی‌های آموزشی و سرگرمی ساخته شده با موتور گودوت، مناسب برای یادگیری</p>
+                    <span class="lang">Godot / GDScript</span>
+                </div>
+                <div class="project-card">
+                    <h3>ابزار تحلیل داده‌های حسابداری</h3>
+                    <p>نرم‌افزار دسکتاپ برای تحلیل تراکنش‌های مالی، پیش‌بینی هزینه و تولید گزارش</p>
+                    <span class="lang">Python / Pandas</span>
+                </div>
+                <div class="project-card">
+                    <h3>تم وردپرس حرفه‌ای IESTM</h3>
+                    <p>قالب اختصاصی وردپرس مناسب برای نمایش نمونه‌کارها، فروشگاهی و وبلاگ</p>
+                    <span class="lang">PHP / CSS / JS</span>
+                </div>
+            </div>
+            <p class="text-muted text-small" style="margin-top:20px;">
+                <i class="fas fa-shopping-bag"></i> برای دریافت اطلاعات بیشتر و خرید محصولات، از طریق صفحه تماس با ما در ارتباط باشید.
             </p>
         </section>
 
@@ -595,6 +684,7 @@
                 home: document.getElementById('page-home'),
                 about: document.getElementById('page-about'),
                 projects: document.getElementById('page-projects'),
+                products: document.getElementById('page-products'), // جدید
                 blog: document.getElementById('page-blog'),
                 contact: document.getElementById('page-contact')
             };
@@ -625,6 +715,7 @@
                     home: 'رادمهر اصغری | استوره AI - برنامه‌نویس و بنیانگذار IESTM',
                     about: 'درباره من | رادمهر اصغری - استوره AI',
                     projects: 'پروژه‌ها | رادمهر اصغری - استوره AI',
+                    products: 'محصولات استوره | نرم‌افزارهای IESTM', // جدید
                     blog: 'مجله استوره | مقالات برنامه‌نویسی و هوش مصنوعی',
                     contact: 'تماس با من | رادمهر اصغری - استوره AI'
                 };
@@ -632,6 +723,7 @@
                     home: 'وبسایت رسمی رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM. پروژه‌های پایتون، بازی‌سازی و هوش مصنوعی.',
                     about: 'بیوگرافی کامل رادمهر اصغری، برنامه‌نویس اهل اصفهان و بنیانگذار برند IESTM.',
                     projects: 'لیست کامل پروژه‌های نرم‌افزاری و بازی‌های ساخته شده توسط رادمهر اصغری (استوره AI).',
+                    products: 'محصولات نرم‌افزاری و خدماتی تیم IESTM شامل ربات هوشمند، پکیج‌های آموزشی، بازی و ابزارهای دسکتاپ.',
                     blog: 'مقالات آموزشی و تجربه‌های شخصی رادمهر اصغری در حوزه برنامه‌نویسی، پایتون، گودوت و هوش مصنوعی.',
                     contact: 'راه‌های ارتباطی با رادمهر اصغری - فرم تماس و شبکه‌های اجتماعی.'
                 };
