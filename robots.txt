@@ -1,0 +1,11 @@
+# همه خزنده‌ها مجاز هستند
+User-agent: *
+
+# همه صفحات را بخز
+Allow: /
+
+# اگر صفحه‌ای دارید که نمی‌خواهید ایندکس شود (مثلاً پیش‌نمایش)
+# Disallow: /private/
+
+# مسیر فایل نقشه سایت
+Sitemap: https://iestmgit.github.io/iestm-website/sitemap.xml
