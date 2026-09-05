@@ -1,23 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- سئو -->
-    <title>رادمهر اصغری | استوره AI</title>
-    <meta name="description" content="رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM. پروژه‌های پایتون، بازی‌سازی سه‌بعدی و هوش مصنوعی.">
-    <meta name="keywords" content="رادمهر اصغری, استوره AI, IESTM, برنامه‌نویس, پایتون, Three.js, بازی سازی">
-    <meta property="og:title" content="رادمهر اصغری | استوره AI">
-    <meta property="og:description" content="برنامه‌نویس، بنیانگذار IESTM، عاشق خلق ابزارهای هوشمند و بازی‌های جذاب.">
+    
+    <!-- ===== سئو اصلی ===== -->
+    <title>رادمهر اصغری (اسطوره AI) | برنامه‌نویس، توسعه‌دهنده بازی و هوش مصنوعی</title>
+    <meta name="description" content="رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM. متخصص پایتون، Three.js، بازی‌سازی سه‌بعدی و هوش مصنوعی. پروژه‌های متن‌باز و محصولات نرم‌افزاری خلاقانه.">
+    <meta name="keywords" content="رادمهر اصغری, اسطوره AI, IESTM, برنامه‌نویس پایتون, توسعه‌دهنده بازی, Three.js, هوش مصنوعی, بازی‌سازی سه‌بعدی, اصفهان, برنامه‌نویسی وب, PyQt, Godot">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="google-site-verification" content="your-verification-code">
+    <link rel="canonical" href="https://iestmgit.github.io/iestm-website/">
+    
+    <!-- ===== Open Graph (اشتراک‌گذاری در شبکه‌های اجتماعی) ===== -->
+    <meta property="og:title" content="رادمهر اصغری | اسطوره AI - برنامه‌نویس و توسعه‌دهنده خلاق">
+    <meta property="og:description" content="برنامه‌نویس پایتون، بازی‌ساز سه‌بعدی با Three.js و بنیانگذار IESTM. پروژه‌های متن‌باز و ابزارهای هوشمند.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://iestmgit.github.io/iestm-website/">
-    <link rel="canonical" href="https://iestmgit.github.io/iestm-website/">
-
-    <!-- فونت فارسی وزیر -->
+    <meta property="og:image" content="https://iestmgit.github.io/iestm-website/IMG_20260717_142636_716.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="اسطوره AI - رادمهر اصغری">
+    
+    <!-- ===== توییتر کارت ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="رادمهر اصغری | اسطوره AI">
+    <meta name="twitter:description" content="برنامه‌نویس پایتون، بازی‌ساز Three.js و بنیانگذار IESTM.">
+    <meta name="twitter:image" content="https://iestmgit.github.io/iestm-website/IMG_20260717_142636_716.jpg">
+    
+    <!-- ===== فونت‌ها با preconnect برای سرعت ===== -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
-    <!-- فونت‌آورم -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- ===== سئو فنی ===== -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+    <meta name="theme-color" content="#0c0c1a">
 
     <style>
         /* ===== RESET ===== */
@@ -35,7 +55,6 @@
             background-image: radial-gradient(circle at 20% 30%, #1a1a3e 0%, #0a0a1a 80%);
             line-height: 1.8;
         }
-        /* ===== اسکرول ===== */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -46,8 +65,6 @@
             background: #00d4ff;
             border-radius: 10px;
         }
-
-        /* ===== کانتینر اصلی ===== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -60,8 +77,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s;
         }
-
-        /* ===== هدر / ناو ===== */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -122,8 +137,6 @@
             color: #00d4ff;
             cursor: pointer;
         }
-
-        /* ===== صفحات ===== */
         .page {
             display: none;
             animation: fadeSlide 0.5s ease;
@@ -142,8 +155,6 @@
                 transform: translateY(0);
             }
         }
-
-        /* ===== تایپوگرافی ===== */
         h1 {
             font-size: 2.8rem;
             font-weight: 700;
@@ -175,8 +186,6 @@
         .text-small {
             font-size: 0.9rem;
         }
-
-        /* ===== پروفایل ===== */
         .profile-wrap {
             display: flex;
             flex-wrap: wrap;
@@ -210,8 +219,6 @@
             margin-bottom: 25px;
             border: 1px solid rgba(255, 255, 255, 0.04);
         }
-
-        /* ===== اسکیل‌ها ===== */
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -238,8 +245,6 @@
         .skill-tag i {
             margin-left: 8px;
         }
-
-        /* ===== کارت‌های پروژه و محصول ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -287,8 +292,6 @@
             color: #00d4ff;
             border: 1px solid rgba(0, 212, 255, 0.1);
         }
-
-        /* ===== مجله ===== */
         .blog-list {
             display: flex;
             flex-direction: column;
@@ -350,8 +353,6 @@
             margin-top: 12px;
             display: inline-block;
         }
-
-        /* ===== تماس ===== */
         .contact-flex {
             display: flex;
             flex-wrap: wrap;
@@ -424,8 +425,30 @@
             border-color: #00d4ff;
             transform: translateX(-5px);
         }
-
-        /* ===== فوتر ===== */
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .share-buttons a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 18px;
+            border-radius: 30px;
+            color: #a0a0c0;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        .share-buttons a:hover {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            border-color: #00d4ff;
+        }
         .footer {
             margin-top: 50px;
             padding-top: 25px;
@@ -437,8 +460,6 @@
         .footer i {
             color: #00d4ff;
         }
-
-        /* ===== واکنش‌گرا ===== */
         @media (max-width: 768px) {
             .container {
                 padding: 20px 18px;
@@ -488,27 +509,27 @@
 <div class="container">
     <!-- ===== HEADER ===== -->
     <header class="navbar">
-        <div class="logo"><span>IESTM</span> | استوره</div>
+        <div class="logo"><span>IESTM</span> | اسطوره</div>
         <button class="hamburger" id="hamburger" aria-label="منو">
             <i class="fas fa-bars"></i>
         </button>
-        <nav class="nav-links" id="navLinks">
-            <a href="#" data-page="home" class="active">خانه</a>
-            <a href="#" data-page="about">درباره من</a>
-            <a href="#" data-page="projects">پروژه‌ها</a>
-            <a href="#" data-page="products">محصولات</a>
-            <a href="#" data-page="blog">مجله</a>
-            <a href="#" data-page="contact">تماس</a>
+        <nav class="nav-links" id="navLinks" aria-label="منوی اصلی">
+            <a href="#home" data-page="home" class="active">خانه</a>
+            <a href="#about" data-page="about">درباره من</a>
+            <a href="#projects" data-page="projects">پروژه‌ها</a>
+            <a href="#products" data-page="products">محصولات</a>
+            <a href="#blog" data-page="blog">مجله</a>
+            <a href="#contact" data-page="contact">تماس</a>
         </nav>
     </header>
 
     <!-- ===== HOME ===== -->
-    <section id="page-home" class="page active">
+    <section id="page-home" class="page active" aria-label="صفحه اصلی">
         <div class="profile-wrap">
-            <img src="IMG_20260717_142636_716.jpg" alt="رادمهر اصغری" class="avatar" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Crect fill=%22%231a1a3e%22 width=%22140%22 height=%22140%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22%2300d4ff%22 font-family=%22Vazir%22%3ERA%3C/text%3E%3C/svg%3E';">
+            <img src="IMG_20260717_142636_716.jpg" alt="رادمهر اصغری - برنامه‌نویس و بنیانگذار IESTM" class="avatar" width="140" height="140" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Crect fill=%22%231a1a3e%22 width=%22140%22 height=%22140%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22%2300d4ff%22 font-family=%22Vazir%22%3ERA%3C/text%3E%3C/svg%3E';">
             <div>
                 <h1>رادمهر اصغری</h1>
-                <div class="subhead">〈 استوره AI 〉</div>
+                <div class="subhead">〈 اسطوره AI 〉</div>
                 <p class="text-muted" style="margin-top:8px;">
                     <i class="fas fa-map-pin" style="color:#00d4ff;"></i> اصفهان، ایران
                 </p>
@@ -517,8 +538,8 @@
 
         <div class="bio-box">
             <p>
-                من رادمهر اصغری هستم، برنامه‌نویسی از اصفهان که عاشق خلق ابزارهای هوشمند و بازی‌های جذاب هستم.
-                فعالیت من در حوزه توسعه نرم‌افزار با <strong>پایتون</strong> و <strong>وب</strong> است و همیشه به دنبال یادگیری فناوری‌های جدید هستم.
+                من <strong>رادمهر اصغری</strong> هستم، برنامه‌نویس و توسعه‌دهنده نرم‌افزار اهل اصفهان که عاشق خلق ابزارهای هوشمند و بازی‌های جذاب هستم.
+                فعالیت من در حوزه توسعه نرم‌افزار با <strong>پایتون</strong>، <strong>Three.js</strong> و <strong>وب</strong> است و همیشه به دنبال یادگیری فناوری‌های جدید هستم.
                 کمپانی <strong>IESTM</strong> را بنیان نهادم تا ایده‌های خلاقانه‌ام را در قالب پروژه‌های متنوع و کاربردی به اجرا درآورم.
                 اعتقاد دارم که تکنولوژی باید در خدمت انسان باشد و سعی می‌کنم با کدنویسی، زندگی را کمی ساده‌تر و جذاب‌تر کنم.
             </p>
@@ -533,27 +554,29 @@
             <span class="skill-tag"><i class="fas fa-code"></i> Scratch</span>
             <span class="skill-tag"><i class="fas fa-gamepad"></i> Godot</span>
             <span class="skill-tag"><i class="fas fa-cube"></i> Three.js</span>
+            <span class="skill-tag"><i class="fas fa-brain"></i> هوش مصنوعی</span>
+            <span class="skill-tag"><i class="fas fa-database"></i> PyQt</span>
         </div>
 
         <h2>پروژه‌های برگزیده</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>IESTM OS</h3>
+                <h3><a href="#projects">IESTM OS</a></h3>
                 <p>محیط دسکتاپ ویندوزی با Python/PyQt و قابلیت‌های سفارشی‌سازی پیشرفته</p>
                 <span class="lang">Python / PyQt</span>
             </div>
             <div class="project-card">
-                <h3>IESTM Notebook</h3>
+                <h3><a href="#projects">IESTM Notebook</a></h3>
                 <p>دفترچه یادداشت سبک با ذخیره‌سازی خودکار و تم تاریک</p>
                 <span class="lang">JavaScript / LocalStorage</span>
             </div>
             <div class="project-card">
-                <h3>منظومه شمسی</h3>
-                <p>شبیه‌سازی کامل منظومه شمسی با Three.js</p>
+                <h3><a href="https://iestmgit.github.io/manzoomeh/" target="_blank" rel="noopener noreferrer">منظومه شمسی</a></h3>
+                <p>شبیه‌سازی کامل منظومه شمسی با Three.js و فیزیک گرانش</p>
                 <span class="lang">Three.js / نجوم</span>
             </div>
             <div class="project-card">
-                <h3>هولوگرام کیهانی</h3>
+                <h3><a href="https://iestmgit.github.io/hologeram/" target="_blank" rel="noopener noreferrer">هولوگرام کیهانی</a></h3>
                 <p>افکت سه‌بعدی روانگردان با ذرات نور و توروس نئونی</p>
                 <span class="lang">Three.js / هولوگرام</span>
             </div>
@@ -564,11 +587,11 @@
     </section>
 
     <!-- ===== ABOUT ===== -->
-    <section id="page-about" class="page">
+    <section id="page-about" class="page" aria-label="درباره من">
         <h1>درباره من</h1>
         <div class="bio-box">
             <p>
-                <strong>رادمهر اصغری</strong> متخلص به <strong>«استوره AI»</strong>، برنامه‌نویس و توسعه‌دهنده نرم‌افزار اهل اصفهان است.
+                <strong>رادمهر اصغری</strong> متخلص به <strong>«اسطوره AI»</strong>، برنامه‌نویس و توسعه‌دهنده نرم‌افزار اهل اصفهان است.
                 او از سنین نوجوانی وارد دنیای کدنویسی شد و با اشتیاق فراوان، زبان‌های مختلف برنامه‌نویسی را آموخت.
                 پس از سال‌ها تجربه در حوزه‌های مختلف، تصمیم گرفت تا ایده‌های خود را در قالب یک برند شخصی به نام <strong>IESTM</strong> (مخفف Iran, Esfahan, System, Technology, Modern) متجلی کند.
             </p>
@@ -583,53 +606,54 @@
             </p>
         </div>
         <div style="display:flex; flex-wrap:wrap; gap:25px; margin-top:20px;">
-            <div><i class="fas fa-calendar-alt" style="color:#00d4ff;"></i> شروع فعالیت: 1404</div>
+            <div><i class="fas fa-calendar-alt" style="color:#00d4ff;"></i> شروع فعالیت: ۱۴۰۴</div>
             <div><i class="fas fa-map-pin" style="color:#00d4ff;"></i> اصفهان، ایران</div>
             <div><i class="fas fa-code" style="color:#00d4ff;"></i> بیش از ۲۰ پروژه</div>
+            <div><i class="fas fa-award" style="color:#00d4ff;"></i> تخصص: پایتون و Three.js</div>
         </div>
     </section>
 
     <!-- ===== PROJECTS ===== -->
-    <section id="page-projects" class="page">
+    <section id="page-projects" class="page" aria-label="پروژه‌ها">
         <h1>همه پروژه‌ها</h1>
-        <p class="text-muted" style="margin-bottom:20px;">مجموعه‌ای از دستاوردهای من در حوزه نرم‌افزار و بازی‌سازی</p>
+        <p class="text-muted" style="margin-bottom:20px;">مجموعه‌ای از دستاوردهای من در حوزه نرم‌افزار و بازی‌سازی با پایتون، Three.js و جاوااسکریپت</p>
         <div class="projects-grid">
-            <div class="project-card"><h3><a href="#">IESTM OS</a></h3><p>محیط دسکتاپ ویندوزی با PyQt</p><span class="lang">Python / PyQt</span></div>
-            <div class="project-card"><h3><a href="#">بازی سه‌بعدی دوز</a></h3><p>نسخه سه‌بعدی بازی کلاسیک دوز</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="#">IESTM Notebook</a></h3><p>دفترچه یادداشت با ذخیره‌سازی خودکار</p><span class="lang">JavaScript</span></div>
-            <div class="project-card"><h3><a href="#">صلوات‌شمار</a></h3><p>ابزار دیجیتال شمارش صلوات</p><span class="lang">JavaScript</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/manzoomeh/" target="_blank">منظومه شمسی</a></h3><p>شبیه‌سازی کامل منظومه شمسی</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/abarmokaab/" target="_blank">ابر مکعب</a></h3><p>تسراکت با خطوط نئونی</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/hologeram/" target="_blank">هولوگرام کیهانی</a></h3><p>افکت روانگردان سه‌بعدی</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="https://iestmcompany-creator.github.io/TehranCity/" target="_blank">تهران سیتی</a></h3><p>بازی رانندگی در تهران</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/zibanvis/" target="_blank">زیبـانویس اسم</a></h3><p>ابزار شخصی‌سازی متن</p><span class="lang">JavaScript</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/jok-dynamite/" target="_blank">ایستم جوک دینامیت</a></h3><p>پروژه طنز و سرگرمی</p><span class="lang">سرگرمی</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/football-3d/" target="_blank">فوتبال سه‌بعدی</a></h3><p>شبیه‌ساز فوتبال سه‌بعدی</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/iestm-website/" target="_blank">سایت کمپانی IESTM</a></h3><p>وبسایت رسمی معرفی کمپانی</p><span class="lang">HTML / CSS</span></div>
+            <div class="project-card"><h3><a href="#projects">IESTM OS</a></h3><p>محیط دسکتاپ ویندوزی با PyQt</p><span class="lang">Python / PyQt</span></div>
+            <div class="project-card"><h3><a href="#projects">بازی سه‌بعدی دوز</a></h3><p>نسخه سه‌بعدی بازی کلاسیک دوز با هوش مصنوعی مینی‌مکس</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="#projects">IESTM Notebook</a></h3><p>دفترچه یادداشت با ذخیره‌سازی خودکار</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="#projects">صلوات‌شمار</a></h3><p>ابزار دیجیتال شمارش صلوات</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/manzoomeh/" target="_blank" rel="noopener noreferrer">منظومه شمسی</a></h3><p>شبیه‌سازی کامل منظومه شمسی با Three.js</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/abarmokaab/" target="_blank" rel="noopener noreferrer">ابر مکعب</a></h3><p>تسراکت با خطوط نئونی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/hologeram/" target="_blank" rel="noopener noreferrer">هولوگرام کیهانی</a></h3><p>افکت روانگردان سه‌بعدی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmcompany-creator.github.io/TehranCity/" target="_blank" rel="noopener noreferrer">تهران سیتی</a></h3><p>بازی رانندگی در تهران</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/zibanvis/" target="_blank" rel="noopener noreferrer">زیبـانویس اسم</a></h3><p>ابزار شخصی‌سازی متن</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/jok-dynamite/" target="_blank" rel="noopener noreferrer">ایستم جوک دینامیت</a></h3><p>پروژه طنز و سرگرمی</p><span class="lang">سرگرمی</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/football-3d/" target="_blank" rel="noopener noreferrer">فوتبال سه‌بعدی</a></h3><p>شبیه‌ساز فوتبال سه‌بعدی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/iestm-website/" target="_blank" rel="noopener noreferrer">سایت کمپانی IESTM</a></h3><p>وبسایت رسمی معرفی کمپانی</p><span class="lang">HTML / CSS</span></div>
         </div>
     </section>
 
     <!-- ===== PRODUCTS ===== -->
-    <section id="page-products" class="page">
-        <h1>محصولات استوره</h1>
+    <section id="page-products" class="page" aria-label="محصولات">
+        <h1>محصولات اسطوره</h1>
         <p class="text-muted" style="margin-bottom:20px;">محصولات نرم‌افزاری و خدماتی تیم IESTM</p>
         <div class="projects-grid">
-            <div class="project-card"><h3><a href="#">IESTM OS</a></h3><p>سیستم‌عامل دسکتاپ ویندوزی</p><span class="lang">Python</span></div>
-            <div class="project-card"><h3><a href="#">بازی سه‌بعدی دوز</a></h3><p>بازی فکری سه‌بعدی</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="#">IESTM Notebook</a></h3><p>دفترچه یادداشت هوشمند</p><span class="lang">JavaScript</span></div>
-            <div class="project-card"><h3><a href="#">صلوات‌شمار دیجیتال</a></h3><p>ابزار شمارش صلوات</p><span class="lang">JavaScript</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/manzoomeh/" target="_blank">منظومه شمسی</a></h3><p>شبیه‌ساز نجومی</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="https://iestmcompany-creator.github.io/TehranCity/" target="_blank">تهران سیتی</a></h3><p>بازی رانندگی</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/zibanvis/" target="_blank">زیبـانویس اسم</a></h3><p>ابزار شخصی‌سازی</p><span class="lang">JavaScript</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/jok-dynamite/" target="_blank">ایستم جوک دینامیت</a></h3><p>سرگرمی طنز</p><span class="lang">طنز</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/football-3d/" target="_blank">فوتبال سه‌بعدی</a></h3><p>شبیه‌ساز فوتبال</p><span class="lang">Three.js</span></div>
-            <div class="project-card"><h3><a href="https://iestmgit.github.io/iestm-website/" target="_blank">سایت کمپانی</a></h3><p>وبسایت رسمی</p><span class="lang">HTML/CSS</span></div>
+            <div class="project-card"><h3><a href="#products">IESTM OS</a></h3><p>سیستم‌عامل دسکتاپ ویندوزی</p><span class="lang">Python</span></div>
+            <div class="project-card"><h3><a href="#products">بازی سه‌بعدی دوز</a></h3><p>بازی فکری سه‌بعدی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="#products">IESTM Notebook</a></h3><p>دفترچه یادداشت هوشمند</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="#products">صلوات‌شمار دیجیتال</a></h3><p>ابزار شمارش صلوات</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/manzoomeh/" target="_blank" rel="noopener noreferrer">منظومه شمسی</a></h3><p>شبیه‌ساز نجومی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmcompany-creator.github.io/TehranCity/" target="_blank" rel="noopener noreferrer">تهران سیتی</a></h3><p>بازی رانندگی</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/zibanvis/" target="_blank" rel="noopener noreferrer">زیبـانویس اسم</a></h3><p>ابزار شخصی‌سازی</p><span class="lang">JavaScript</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/jok-dynamite/" target="_blank" rel="noopener noreferrer">ایستم جوک دینامیت</a></h3><p>سرگرمی طنز</p><span class="lang">طنز</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/football-3d/" target="_blank" rel="noopener noreferrer">فوتبال سه‌بعدی</a></h3><p>شبیه‌ساز فوتبال</p><span class="lang">Three.js</span></div>
+            <div class="project-card"><h3><a href="https://iestmgit.github.io/iestm-website/" target="_blank" rel="noopener noreferrer">سایت کمپانی</a></h3><p>وبسایت رسمی</p><span class="lang">HTML/CSS</span></div>
         </div>
     </section>
 
     <!-- ===== BLOG ===== -->
-    <section id="page-blog" class="page">
-        <h1>مجله استوره</h1>
+    <section id="page-blog" class="page" aria-label="مجله">
+        <h1>مجله اسطوره</h1>
         <p class="text-muted" style="margin-bottom:20px;">نوشته‌های من درباره برنامه‌نویسی، هوش مصنوعی و تجربه‌های شخصی</p>
         <div class="blog-list">
             <!-- مقاله ۱ -->
@@ -685,7 +709,7 @@
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section id="page-contact" class="page">
+    <section id="page-contact" class="page" aria-label="تماس با من">
         <h1>تماس با من</h1>
         <p class="text-muted">خوشحال می‌شوم نظرات، پیشنهادات و سوالات شما را بشنوم.</p>
         <div class="contact-flex">
@@ -702,16 +726,23 @@
                 </p>
             </div>
             <div class="social-links">
-                <a href="https://www.instagram.com/radmehr_asghari" target="_blank"><i class="fab fa-instagram fa-lg"></i> اینستاگرام</a>
-                <a href="https://eitaa.com/iestmcompany" target="_blank"><i class="fas fa-comment-dots fa-lg"></i> ایتا</a>
-                <a href="https://github.com/iestmgit/" target="_blank"><i class="fas fa-comment-dots fa-lg"></i> گیت‌هاب (به زودی)</a>
+                <a href="https://www.instagram.com/radmehr_asghari" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-lg"></i> اینستاگرام</a>
+                <a href="https://eitaa.com/iestmcompany" target="_blank" rel="noopener noreferrer"><i class="fas fa-comment-dots fa-lg"></i> ایتا</a>
+                <a href="https://github.com/iestmgit/" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-lg"></i> گیت‌هاب</a>
             </div>
+        </div>
+        <!-- دکمه‌های اشتراک‌گذاری -->
+        <div class="share-buttons">
+            <span class="text-muted" style="margin-left:10px;">اشتراک‌گذاری:</span>
+            <a href="https://t.me/share/url?url=https://iestmgit.github.io/iestm-website/&text=رادمهر%20اصغری%20%7C%20اسطوره%20AI" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i> تلگرام</a>
+            <a href="https://wa.me/?text=https://iestmgit.github.io/iestm-website/" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> واتساپ</a>
+            <a href="https://twitter.com/intent/tweet?url=https://iestmgit.github.io/iestm-website/&text=رادمهر%20اصغری%20%7C%20اسطوره%20AI" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> توییتر</a>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <div class="footer">
-        <p>طراحی شده با <i class="fas fa-heart"></i> توسط رادمهر اصغری | استوره AI</p>
+        <p>طراحی شده با <i class="fas fa-heart"></i> توسط رادمهر اصغری | اسطوره AI</p>
         <p style="font-size:0.8rem; margin-top:5px;">همه حقوق محفوظ است © ۱۴۰۴</p>
     </div>
 </div>
@@ -739,13 +770,12 @@
                 link.classList.remove('active');
                 if (link.dataset.page === pageId) link.classList.add('active');
             });
-            // update meta
             const titles = {
-                home: 'رادمهر اصغری | استوره AI',
+                home: 'رادمهر اصغری | اسطوره AI',
                 about: 'درباره من | رادمهر اصغری',
                 projects: 'پروژه‌ها | رادمهر اصغری',
-                products: 'محصولات | استوره AI',
-                blog: 'مجله استوره | مقالات',
+                products: 'محصولات | اسطوره AI',
+                blog: 'مجله اسطوره | مقالات',
                 contact: 'تماس با من | رادمهر اصغری'
             };
             document.title = titles[pageId] || titles.home;
@@ -822,14 +852,32 @@
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "رادمهر اصغری",
-            "alternateName": "استوره AI",
+            "alternateName": "اسطوره AI",
             "url": "https://iestmgit.github.io/iestm-website/",
-            "sameAs": ["https://www.instagram.com/radmehr_asghari", "https://eitaa.com/iestmcompany"],
-            "worksFor": { "@type": "Organization", "name": "IESTM" }
+            "sameAs": ["https://www.instagram.com/radmehr_asghari", "https://eitaa.com/iestmcompany", "https://github.com/iestmgit/"],
+            "worksFor": { "@type": "Organization", "name": "IESTM" },
+            "jobTitle": "توسعه‌دهنده نرم‌افزار و بازی‌ساز",
+            "address": { "@type": "PostalAddress", "addressLocality": "اصفهان", "addressCountry": "IR" }
         });
         document.head.appendChild(script);
+
+        // اضافه کردن WebSite Schema
+        const script2 = document.createElement('script');
+        script2.type = 'application/ld+json';
+        script2.textContent = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "اسطوره AI - رادمهر اصغری",
+            "url": "https://iestmgit.github.io/iestm-website/",
+            "description": "وبسایت شخصی رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://iestmgit.github.io/iestm-website/#search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        });
+        document.head.appendChild(script2);
     })();
 </script>
 </body>
 </html>
-
