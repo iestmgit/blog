@@ -1,0 +1,33 @@
+{
+    "name": "اسطوره AI - رادمهر اصغری",
+    "short_name": "اسطوره AI",
+    "description": "وبسایت شخصی رادمهر اصغری، برنامه‌نویس و بنیانگذار IESTM",
+    "start_url": "/iestm-website/",
+    "display": "standalone",
+    "background_color": "#0c0c1a",
+    "theme_color": "#0c0c1a",
+    "orientation": "portrait",
+    "dir": "rtl",
+    "lang": "fa",
+    "icons": [
+        {
+            "src": "https://iestmgit.github.io/iestm-website/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://iestmgit.github.io/iestm-website/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "https://iestmgit.github.io/iestm-website/screenshot-1.png",
+            "sizes": "1080x1920",
+            "type": "image/png"
+        }
+    ]
+}
