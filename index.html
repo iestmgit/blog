@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     
     <!-- ============================================ -->
     <!-- ===== سئو اصلی (قدرتمندترین تگ‌ها) ===== -->
@@ -13,6 +13,34 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://iestmgit.github.io/iestm-website/">
+    
+    <!-- ============================================ -->
+    <!-- ===== PWA - تگ‌های اپلیکیشن ===== -->
+    <!-- ============================================ -->
+    
+    <!-- نام اپلیکیشن -->
+    <meta name="application-name" content="اسطوره AI">
+    <meta name="apple-mobile-web-app-title" content="اسطوره AI">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- رنگ‌های اپلیکیشن -->
+    <meta name="theme-color" content="#0c0c1a">
+    <meta name="msapplication-navbutton-color" content="#0c0c1a">
+    <meta name="msapplication-TileColor" content="#0c0c1a">
+    <meta name="msapplication-TileImage" content="https://iestmgit.github.io/iestm-website/icon-192.png">
+    
+    <!-- آیکون‌های اپلیکیشن برای دستگاه‌های مختلف -->
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect fill='%230c0c1a' width='16' height='16'/%3E%3Ctext x='8' y='12' font-size='10' text-anchor='middle' fill='%2300d4ff' font-family='Vazir'%3EAI%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect fill='%230c0c1a' width='32' height='32'/%3E%3Ctext x='16' y='22' font-size='20' text-anchor='middle' fill='%2300d4ff' font-family='Vazir'%3EAI%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://iestmgit.github.io/iestm-website/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://iestmgit.github.io/iestm-website/icon-512.png">
+    <link rel="apple-touch-icon" href="https://iestmgit.github.io/iestm-website/icon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="https://iestmgit.github.io/iestm-website/icon-192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="https://iestmgit.github.io/iestm-website/icon-512.png">
+    
+    <!-- فایل Manifest برای PWA -->
+    <link rel="manifest" href="manifest.json">
     
     <!-- ============================================ -->
     <!-- ===== Open Graph (برای اشتراک‌گذاری) ===== -->
@@ -45,7 +73,6 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <meta name="theme-color" content="#0c0c1a">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -71,6 +98,9 @@
             padding: 20px;
             background-image: radial-gradient(circle at 20% 30%, #1a1a3e 0%, #0a0a1a 80%);
             line-height: 1.8;
+            /* جلوگیری از اسکرول اضافی در اپلیکیشن */
+            overscroll-behavior: none;
+            -webkit-tap-highlight-color: transparent;
         }
         
         /* Scrollbar */
@@ -502,6 +532,73 @@
         
         .footer i { color: #00d4ff; }
         
+        /* دکمه نصب اپلیکیشن (PWA) */
+        .install-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(12, 12, 26, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 16px 20px;
+            border-top: 2px solid rgba(0, 212, 255, 0.3);
+            z-index: 9999;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            direction: rtl;
+        }
+        
+        .install-banner.show { display: flex; }
+        
+        .install-banner .install-text {
+            color: #e0e0f0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .install-banner .install-text i {
+            color: #00d4ff;
+            font-size: 1.4rem;
+        }
+        
+        .install-banner .install-btn {
+            background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+            color: #fff;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+        
+        .install-banner .install-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        .install-banner .close-install {
+            background: none;
+            border: none;
+            color: #6666aa;
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: 0.3s;
+        }
+        
+        .install-banner .close-install:hover {
+            color: #ffffff;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .container { padding: 20px 18px; border-radius: 28px; }
@@ -519,14 +616,50 @@
             .avatar { width: 120px; height: 120px; }
             .contact-flex { flex-direction: column; }
             .social-links { flex: 1; }
+            .install-banner { flex-direction: column; text-align: center; }
         }
         
         @media (max-width: 480px) {
             .projects-grid { grid-template-columns: 1fr; }
         }
+        
+        /* حالت اپلیکیشن (وقتی نصب شد) */
+        @media (display-mode: standalone) {
+            body { padding: 0; }
+            .container { border-radius: 0; border: none; padding: 20px; }
+            .navbar { padding-top: 10px; }
+        }
+        
+        @media (display-mode: fullscreen) {
+            body { padding: 0; }
+            .container { border-radius: 0; border: none; padding: 20px; }
+        }
+        
+        @media (display-mode: minimal-ui) {
+            body { padding: 0; }
+            .container { border-radius: 0; border: none; padding: 20px; }
+        }
     </style>
 </head>
 <body>
+
+<!-- ============================================ -->
+<!-- ===== بنر نصب اپلیکیشن (PWA) ===== -->
+<!-- ============================================ -->
+<div class="install-banner" id="installBanner">
+    <div class="install-text">
+        <i class="fas fa-mobile-alt"></i>
+        <span>نصب اپلیکیشن <strong>اسطوره AI</strong> برای تجربه بهتر</span>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+        <button class="install-btn" id="installBtn">
+            <i class="fas fa-download"></i> نصب
+        </button>
+        <button class="close-install" id="closeInstall">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
 
 <div class="container">
     <!-- ===== HEADER ===== -->
@@ -765,6 +898,9 @@
     <div class="footer">
         <p>طراحی شده با <i class="fas fa-heart"></i> توسط رادمهر اصغری | اسطوره AI</p>
         <p style="font-size:0.8rem; margin-top:5px;">همه حقوق محفوظ است © ۱۴۰۴</p>
+        <p style="font-size:0.7rem; margin-top:5px; color:#444466;">
+            <i class="fas fa-code"></i> نسخه اپلیکیشن - قابل نصب روی گوشی و دسکتاپ
+        </p>
     </div>
 </div>
 
@@ -869,7 +1005,49 @@
         });
 
         // =============================================
-        // ===== STRUCTURED DATA (برای ایندکس بهتر) =====
+        // ===== PWA - قابلیت نصب اپلیکیشن =====
+        // =============================================
+        
+        let deferredPrompt = null;
+        const installBanner = document.getElementById('installBanner');
+        const installBtn = document.getElementById('installBtn');
+        const closeInstall = document.getElementById('closeInstall');
+
+        // گوش دادن به رویداد beforeinstallprompt
+        window.addEventListener('beforeinstallprompt', function(e) {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBanner.classList.add('show');
+            console.log('✅ PWA: اپلیکیشن قابل نصب است');
+        });
+
+        // دکمه نصب
+        installBtn.addEventListener('click', async function() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const result = await deferredPrompt.userChoice;
+                console.log('✅ PWA: نتیجه نصب:', result.outcome);
+                deferredPrompt = null;
+                installBanner.classList.remove('show');
+            } else {
+                // اگر مرورگر از نصب پشتیبانی نمی‌کند، راهنمایی نشان بده
+                alert('برای نصب این اپلیکیشن، از مرورگر Chrome یا Edge استفاده کنید و گزینه "Add to Home Screen" را انتخاب کنید.');
+            }
+        });
+
+        // بستن بنر
+        closeInstall.addEventListener('click', function() {
+            installBanner.classList.remove('show');
+        });
+
+        // اگر اپلیکیشن قبلاً نصب شده باشد، بنر را نشان نده
+        window.addEventListener('appinstalled', function() {
+            console.log('✅ PWA: اپلیکیشن با موفقیت نصب شد');
+            installBanner.classList.remove('show');
+        });
+
+        // =============================================
+        // ===== ساختار داده (Schema) =====
         // =============================================
         
         // 1. Personal Schema
@@ -917,7 +1095,7 @@
         });
         document.head.appendChild(script2);
 
-        // 3. Breadcrumb Schema (برای نمایش در نتایج گوگل)
+        // 3. Breadcrumb Schema
         const script3 = document.createElement('script');
         script3.type = 'application/ld+json';
         script3.textContent = JSON.stringify({
@@ -940,29 +1118,7 @@
         });
         document.head.appendChild(script3);
 
-        // 4. Article Schema (برای مقالات مجله)
-        const script4 = document.createElement('script');
-        script4.type = 'application/ld+json';
-        script4.textContent = JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": "چرا پایتون انتخاب اول من برای توسعه نرم‌افزار است؟",
-            "datePublished": "2025-04-03",
-            "dateModified": "2025-04-03",
-            "author": {
-                "@type": "Person",
-                "name": "رادمهر اصغری"
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "اسطوره AI"
-            },
-            "url": "https://iestmgit.github.io/iestm-website/#blog",
-            "mainEntityOfPage": "https://iestmgit.github.io/iestm-website/#blog"
-        });
-        document.head.appendChild(script4);
-
-        console.log('✅ اسطوره AI - سئو کامل شد!');
+        console.log('✅ اسطوره AI - سئو و PWA کامل شد!');
     })();
 </script>
 
